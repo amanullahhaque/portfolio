@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Toti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<!-- css  link -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+
+</head>
+<body class="">
+  <div class="bg_black wraper mt-4  ">
+  	<nav id="navbar_one" class="navbar navbar-expand-lg navbar-dark menu bg_black ">
+      <div class="container pl-10">
+        <a class="navbar-brand mr-0" href="#"><img src="img/logo.PNG"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav_link " href="#hero" aria-current="page" href="#">Нүүр</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav_link" href="#introduction">Танилцуулга</a>
+            </li>
+           <li class="nav-item">
+              <a class="nav_link" href="#lesson">Хичээл</a>
+            </li>
+           <li class="nav-item">
+              <a class="nav_link" href="#contact">Холбоо барих</a>
+            </li>
+
+          </ul>
+          <form class="d-flex ">
+           
+            <button class="btn btn-outline-success border_white" type="submit">БҮРТГҮҮЛЭХ</button>
+            <button class="btn btn-outline-success ml-2 btn2" type="submit">НЭВТРЭХ</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+        <div id="hero" class="banner mt-15">
+          <img src="img/Cover.16x9.jpg">
+        </div>
+    <div id="introduction" class="container-fluid top_wrapper  ">
+      <div class="container">
+        <div class="video_sec py-5 mt-5 text_gray-400">
+          <div class="d-grid gap-2 d-md-block">
+            <button class="btn bg_success text-light" type="button">ТАНИЛЦУУЛГА</button>
+           
+         
+
+          <!-- <a class="btn btn-outline-success border_white video_btn" data-bs-toggle="modal" href="#exampleModalToggle" role="button"> WATCH VIDEO</a> -->
+          <button class="lets-play btn btn-outline-success border_white video_btn" data-video="https://www.youtube.com/embed/P7n9khnrWp4?list=PLNHTO4UtQULRmJCJgTVeeocg88J0M-AuM">WATCH VIDEO</button>
+          </div>
+          <div id="video-wrap"></div> 
+          <div class="row my-5">
+            <div class="col-md-12">
+
+              <h3 class="title"><span class="text-success ">БҮТЭЭГДЭХҮҮН</span> ба <span class="text-warning">ҮЙЛЧИЛГЭЭ</span> гэсэн хэсгүүдээс бүрдэнэ.</h3>
+            </div>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-md-6 ">
+              <div class="text-content pr-10">
+                  <h4 class="text-center">БҮТЭЭГДЭХҮҮН </h4>
+                  <p>Хэмжээний  сонголт  бүхий  тусгай  видео  дэлгэц.  Бидний 
+                  эргэн тойронд хэрэгтэй хэрэггүй олон сурталчилгаа зурагт 
+                  самбарууд байдаг. Үндсэндээ таньд хэрэгтэй боловсролын 
+                  дэлгэц юм.
+                  <spna class="d-block"></spna> (ToTi display)
+                  </p> 
+                  <p>Хэрэглээ: Хүүхдийн өрөөнд, хоолны өрөө, коридор, үүдний 
+                  өрөө  зэрэг  газруудад  байрлуулдаг  зөвхөн  хичээл(үг 
+                  цээжлүүлдэг)гардаг дэлгэц. Уг дэлгэц нь өдөр бүр тодорхой 
+                  цагт  асаж  хичээлийг  нь  зураглал,  дуудлага,  дуу  авиагаар 
+                  сануулж заачихаад унтрах тохиргоотой юм. Хүний оролцоо 
+                  шаардлагагүй.</p>
+                
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="text-content pl-10">
+                  <h4 class="text-center">ҮЙЛЧИЛГЭЭ </h4>
+                  <p>Дэлгэц дээр гарах зурмал видео контентууд олон давтамжаар 
+                    гарах  тул  аль  болох  хүнд  төвөг  удахааргүй, сонирхолтой, 
+                    шинэлэг  байдлаар  хийхийг  зорьсон  болно.  Хэрэглэгч 
+                    контент  бүхий  шинэ  үг,  өгүүлбэрүүдийг  бүрэн  цээжилсэн 
+                    гэж  үзвэл  дараагийн  хичээл  бүхий  контентыг  захиална. 
+                    Wifi сүлжээ ашиглан дэлгэц дээрх контент солигдоно. Мөн 
+                    хэрэглэгч  өөрт  таарах  хэрэгцээт  үгс,  харилцан  яриа,  aca-
+                    demic тусгай хичээлүүдийг захиалах бол манай вебсайтаас 
+                    сонгон дэлгэц рүү download хийн үзэх боломжтой. Англи, 
+                    Хятад, Солонгос, Япон гэсэн 4 хэл сурах боломжтой.
+                  </p> 
+                
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="text-content pr-10">
+                <div class=" imgag_content rounded d-flex align-items-center justify-content-center ">
+                  <img class="" src="img/new1.png">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="text-content pl-10">
+                <div class=" imgag_content rounded d-flex align-items-center justify-content-center">
+                  <img class="" src="img/new.png">
+                 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+
+
+<div id="lesson" class="container-fluid requirment_sec bg-light py-15 text_gray-600 mt-5" >
+  <div class="container my-2">
+    <div class="row">
+      
+      <div class="col-md-6  ">
+        <h2 class="section_title mb-4">ХЭРЭГЦЭЭ ШААРДЛАГА</h2>
+        <ul class="nav flex-column nav-pills " id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active p-0 mb-3" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                <div class="section_content ">
+                  <img src="img/icon1.png">
+                  <div class="">
+                    <h4 class="box_title text-dark">Амар хялбар төвөггүй шийдэл</h4>
+                    <p>Өсвөр үе аль болох хүний үйлдэл бага сургалтын технологи, шийдлийг 
+                      шаардаж байна. (Smart board, interactive screen, dashboard, home display)
+                      Зарим хичээлийг гар утсанд нь суурилуулж өгсөн боловч 10 гаруй үйлдэл 
+                      хийхээс төвөгшөөдөг</p>
+                    
+                  </div>
+                </div>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p-0 mb-3" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                <div class="section_content ">
+                  <img src="img/icon2.png">
+                  <div class="">
+                    <h4 class="box_title text-dark">Байнгын давтамж</h4>
+                    <p>Амжилттай сурах хамгийн шилдэг арга бол зогсохгүй суралцах (давтамж). 
+                      Шинэ  хичээл  ороод  гэрийн  даалгаварт  адил  дасгал  өгдөг  нь  давтамж 
+                      үүсгэж буй хэлбэр юм. Ялангуяа хэл сурахад давтамж хамгийн чухал.</p>
+                  </div>
+                    
+                  </div>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p-0 mb-3" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              <div class="section_content ">
+                <img src="img/icon3.png">
+                <div class="">
+                  <h4 class="box_title text-dark">Сонирхолтой</h4>
+                  <p>Өсвөр үе Youtube, facebook, instagram, like, tictoc зэрэг цахим сайтуудаас 
+                  контент үзэх нь үлэмж ихэссэн. Үндсэндээ цаасан, бичгэн хичээлээс залхаад 
+                  байна. Дэлхий даяараа сургалтын материалууд контент хэлбэрт шилжээд 
+                  эхэлжээ.</p>
+                  
+                </div>
+              </div>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link p-0 mb-3" id="pills-contact-tab2" data-bs-toggle="pill" data-bs-target="#pills-contact2" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              <div class="section_content ">
+                <img src="img/icon4.png">
+                <div class="">
+                  <h4 class="box_title text-dark">Blingual</h4>
+                  <p>Багаас нь хүүхдээ зовоолгүй 2 хэлтэй болгох нь эцэг эхчүүдийн мөрөөдөл. 
+                  Бага наснаас эхлэн 2 хэл зэрэг сурах нь үр дүн өндөртэй, олон давуу тал 
+                  байгааг Швейцарь, Австраличууд нотлоод байна. Сургууль дотроо англиар 
+                  ярьдаг хувийн сургуулиудын үнэ ч тэнгэрт хадав.</p>
+                  
+                </div>
+              </div>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link bg_green-400 p-0 mb-3" id="pills-contact-tab3" data-bs-toggle="pill" data-bs-target="#pills-contact3" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              <div class="section_content ">
+                <img src="img/icon5.png">
+                <div class="">
+                  <h4 class="box_title text-dark ">Ковид</h4>
+                  <p>COVID-19  цар  тахлаас  үүдэж  хичээлийн  хоцрогдол  үүсээд  байгаа. 
+                  Халдвараас  сэргийлэх  хамгийн  оновчтой  хамгаалалт  нь  тусгаарлалт. 
+                  Зайлшгүй өгөгдсөн энэ нөцхөл байдалд таарсан сургалтын арга барилыг 
+                  хайсаар байгаа. Учир нь цаашид юу болохыг тааварлахад бэрх.</p>
+                </div>
+                  
+                </div>
+            </button>
+          </li>
+          
+        </ul>
+        
+        
+        
+        
+        
+
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                <div class="right_content position-relative">
+                  <img class="" src="img/slide1.png">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="right_content position-relative">
+                   <img class="" src="img/slide2.png">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+               <div class="right_content position-relative">
+                  <img class="" src="img/slide3.png">
+                </div>
+            </div>
+             <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab2">
+               <div class="right_content position-relative">
+                  
+                  <img class="" src="img/slide4.png">
+                </div>
+            </div>
+             <div class="tab-pane fade" id="pills-contact3" role="tabpanel" aria-labelledby="pills-contact-tab3">
+               <div class="right_content position-relative">
+                  <img class="" src="img/slide5.png">
+                </div>
+            </div>
+            
+          </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid screen_feature bg_success py-5 wraper">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-md-6 col-lg-6 d-flex justify-content-end align-items-center">
+        <div class="left_section pr-12">
+           <h2 class="section_title mb-4">ДЭЛГЭЦИЙН ОНЦЛОГ</h2>
+          
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class=" ">
+          <div class="right_section mb-4 text-center d-flex justify-content-end align-items-center">
+             <img src="img/lcd delgetsiin ontslog.png">
+             
+          </div>
+          
+          
+        </div>
+       
+        
+      </div>
+
+    </div>
+    <div class="screed-details bg-white mt-5">
+      <div class="row ">
+        <div class="col-md-4 ">
+          <div class="card_box text-center">
+            <img src="img/icon1.png" alt="">
+            <p>Өнгө,дуу дүрслэл сайн, сонирхолтой
+                байдлаар англи үг цээжлүүлэх анимейшн
+                хичээлүүд гарна</p> 
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="card_box text-center">
+            <img src="img/icon2.png" alt="">
+            <p>Өглөөнөөс орой хүртэл олон давтамжаар
+англи үг,өгүүлбэр цээжлүүлэх нь гадаад улсад
+байгаа мэт, сурах зорилго тавихгүй байсан ч
+гэсэн тогтоогдох давуу талтай.</p> 
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="card_box text-center">
+            <img src="img/icon3.png" alt="">
+            <p>ТВ, болон цахим хичээлүүд олон байдагч
+яг тэр сувгийг тууштай үзэх нь хүндрэлтэй.
+Удирдлагаа аван солих жишээтэй. ТОTI
+дэлгэцийн хувьд хичээлээс өөр солигдох
+хувилбар байхгүй юм.
+</p> 
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="card_box text-center">
+            <img src="img/icon6.png" alt="">
+            <p>ToTi гэрийн багш хоол цай нэхэхгүй, ядарч
+сульдахгүй, халдвар тараахгүй,зөвхөн
+бага зэргийн цахилгаан шаардлагатай.</p> 
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="card_box text-center">
+            <img src="img/icon4.png" alt="">
+            <p>Хүүхдүүд youtube үзэж үг цээжилдэгч
+яг сургуульд ороход тухайн сургуулийн
+хөтөлбөртэй зөрдөг учир хичээлээс хоцрох, ёс
+бус үг цээжлэх буруу дуудлагатай болох гэх
+зэрэг асуудлууд тулгардаг.</p> 
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="card_box text-center">
+            <img src="img/icon5.png" alt="">
+            <p>Дэлгэц нь өөр дээрээ санах ойтой тул зарим
+хичээлүүдийг татаж аван wifi сүлжээгүй үед
+ч ашиглаж болно.</p> 
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid service_sec py-5  bg-light">
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section_title mb-4">ДЭЛГЭЦИЙН ОНЦЛОГ</h2>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="service_wraper ">
+        <img src="img/page5.png">
+       <!--  <div class="sidbar_inner">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="nav_title px-5 py-2 d-flex align-items-center">
+                 <h2 class="">ToTi</h2>
+              </div>
+              
+            </div>
+
+            <div class="col-md-9 pr-0">
+              <div class="d-flex align-items-start h-full ">
+                <div class="sidbar h-full">
+                  <div class="nav flex-column  nav-pills align-items-center " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    
+                    <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-home"></i></button>
+                    <button class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="far fa-clone"></i></button>
+                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-youtube"></i></button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="far fa-star"></i></button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-database" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-database"></i></button>
+                    
+                  </div>
+                  
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="d-flex justify-content-between block py-3">
+                    <div class="d-flex justify-content-between">
+                     <div class="form d-flex"> <i class="fa fa-search"></i> <input type="text" class="form-control form-input" placeholder=""> 
+                     </div>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center">
+                      <div class="right_range">
+                        <input type="range" class="form-range" id="customRange1">
+                      </div>
+                      <a class="add_btn" href="#">ADD CONTENT</a>
+                    </div>
+                  </div>
+                    <div class="tab-pane fade bg-white" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    </div>
+                    <div class="tab-pane fade show active bg-white" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                      <h4 class="">Content</h5>
+                      <div class="row">
+                        <div class="col-md-3 pr-0">
+                          <div class="card_info">
+                            <img src="img/ehlel.00_44_39_07.Still014.jpg">
+                            <div class="card_body">
+                              <h6>My Body</h6>
+                              <p>video</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 pr-0">
+                          <div class="card_info">
+                            <img src="img/ehlel.00_45_11_14.Still016.jpg">
+                            <div class="card_body">
+                              <h6>Farm Animals</h6>
+                              <p>video</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 pr-0">
+                          <div class="card_info">
+                            <img src="img/ehlel.00_40_36_19.Still002.jpg">
+                            <div class="card_body">
+                              <h6>My Family</h6>
+                              <p>video</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 pr-0">
+                          <div class="card_info">
+                            <img src="img/ehlel.00_43_53_08.Still006.jpg">
+                            <div class="card_body">
+                              <h6>My Hobby</h6>
+                              <p>video</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-md-12">
+                          <div class="sidbar_content my-4">
+                            <h5>Дэлгэц wifi сүлжээгээр дамжин хичээлүүд солигдох ба мөн өөр дээрээ download хийж сүлжээгүй үед ч контент хичээлүүд автоматаар асаж унтран таны мэдлэгийг тэлэх боломжтой.</h5>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="sidbar_content">
+                            <h5>Дэлгэцээр  гарч  байгаа  контент  хичээлүүдийг  хангалттай 
+                            сурсан гэж үзвэл website эсвэл APP суулган өөрийгөө шалгах 
+                            тест өгөх боломжтой</h5>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="tab-pane fade bg-white" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                    <div class="tab-pane fade bg-white" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                    <div class="tab-pane fade bg-white" id="v-pills-database" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <div class="col-md-3">
+                <div class="right_sidbar pt-4">
+                  <img src="img/modern.PNG" alt="">
+                  <div class="card_body p-3 bg-white ">
+                    <div class="border-bottom border-2 mb-2">
+                      <p>Content name</p>
+                      <h5>Modern_archeticture.mov</h5>
+                    </div>
+                     <div class="d-flex justify-content-between ">
+                      <h5>About</h5>
+                      <p>Hide</p>
+                    </div>
+                    <ul>
+                      <li>Type: <strong>Video</strong></li>
+                      <li>Size: <strong>545 Mb</strong></li>
+                      <li>Resulation: <strong>1920×1080</strong></li>
+                    </ul>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Show more<i class="fas fa-angle-down"></i>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                    <div class="toggle_btn d-flex align-items-center">
+                      <label class="switch disable my-2">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                     <h5 class="">Block</h5>
+                      
+                    </div>
+                     <div class="toggle_btn d-flex align-items-center">
+                      
+                      <label class="switch">
+                        <input type="checkbox" checked="">
+                        <span class="slider round"></span>
+                      </label>
+                      <h5 class="">Lifetime</h5>
+                    </div>
+                    <div class=" mt-2 time_sec">
+                      <p>Start time</p>
+                        <div class="mt-2  align-items-center d-flex justify-content-between ">
+                        
+                        <h5 class="border-bottom border-2 pb-2 ">01.12.2016</h5>
+                         <h5 class="border-bottom border-2 pb-2 ">00:00</h5>
+                      </div>
+                      
+                    </div>
+                    <div class="  time_sec">
+                      <p>End time</p>
+                        <div class="mt-2  align-items-center d-flex justify-content-between ">
+                        
+                        <h5 class="border-bottom border-2 pb-2 ">01.12.2016</h5>
+                         <h5 class="border-bottom border-2 pb-2 ">00:00</h5>
+                      </div>
+                      <div class="d-flex justify-content-between mt-1 ">
+                      <h5 class="mb-0">Tags</h5>
+                      <p>Show</p>
+                    </div>
+                    </div>
+                    
+                  </div>
+                  <a class="btn bg_success text-light text-center d-block mt-2 py-0" type="button">save</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid content_lesson py-5 mx-2">
+  <div class="container px-8 ">
+    <div class="row ">
+      <div class="col-md-12 ">
+        <h2 class="section_title mb-5">КОНТЕНТ ХИЧЭЭЛҮҮД</h2>
+      </div>
+    </div>
+    <div class="row px-5 ">
+      <div class="col-md-6">
+        <div class="d-flex card_info">
+          <img src="img/flag.PNG" alt="">
+          <div class="p-4 text-dark">
+            <p>Англи хэлний түгээмэл хэрэглэгддэг 3500 үг, холбоо үг,  өгүүлбэрүүд бүхий контентууд</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex card_info">
+          <img src="img/flag2.PNG" alt="">
+          <div class="p-4 text-dark">
+            <p>Хятад хэлний түгээмэл хэрэглэгддэг 3500 үг, 
+холбоо үг,  өгүүлбэрүүд 
+бүхий контентууд</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row px-5 mt-15">
+      <div class="col-md-6">
+        <div class="d-flex card_info">
+          <img src="img/flag3.PNG" alt="">
+          <div class="p-4 text-dark">
+            <p>Япон хэлний түгээмэл 
+хэрэглэгддэг 3500 үг, 
+холбоо үг,  өгүүлбэрүүд 
+бүхий контентууд</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex card_info">
+          <img src="img/flag4.PNG" alt="">
+          <div class="p-4 pr-0 text-dark">
+            <p>Солонгос хэлний түгээмэл 
+хэрэглэгддэг 3500 үг, 
+холбоо үг,  өгүүлбэрүүд 
+бүхий контентууд</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="container-fluid content_feature py-5 bg-light mx-2">
+  <div class="container my-5">
+    <div class="row px-8">
+      <div class="col-md-12 ">
+        <h2 class="section_title mb-5 text-center">КОНТЕНТЫН  ОНЦЛОГ ДАВУУ ТАЛУУД</h2>
+        <p>Хүний тархи аливаа юмыг цээжлэж тогтоохдоо кодчилол болон дүрслэлээр гэсэн 2 аргаар тогтоодгийг судлаачид тогтоосон байдаг. Хүн үгийг 
+цээжлэхдээ түүнтэй холбоотой дүрсийг бодолдоо ургуулан цээжилдэг. Дүрслэлийн аргаар цээжлэх нь тархины ачаалал харьцангүй бага, ядралгүй 
+цээжилдэг. ToTi гэрийн багш ХАРАХ-СОНСОХ-БИЧВЭР гэсэн хүний гол 3 мэдрэмжин дээр тулгуурлан маш амар хялбар аргаар өндөр үр дүнтэй үг 
+цээжлэх боломжийг олгож байна.</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card_info">
+          <img src="img/Capture.111.jpg">
+          <div class="card_body">
+            <h5>ДҮРС ЗУРАГ</h5>
+            <p>Зураг  видео  үзээд  аливаа  юмыг  цээжлэх 
+нь  мэдээж  сонирхолтой.  Хэдэн  жилийн 
+өмнө  шинэ  үг  цээжлэхэд  зөвхөн  толь 
+бичиг  дээрx  хэдэн  үсэг  хардаг  байсан 
+бол  icon,  infographic,  typographic,  picture, 
+animation  зэргээр  илүү  амар  байдлаар 
+цээжлэх  боломжтой  болсоор  байгаа.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card_info">
+          <img src="img/Capture2222.jpg">
+          <div class="card_body">
+            <h5>СОНСОХ</h5>
+            <p>Дуу авиа нь хүний далд тархинд бичигдэж 
+байдгаараа  онцлогтой  юм.  Дэлгэцэнд  үг 
+дагуулж  өгүүлбэр  хийж  байгаа  нь  тухайн 
+үг  өгүүлбэрт  хэрхэн  орохыг  заахаас  гадна 
+өгүүлбэрийг бүтнээр нь цээжлээгүй боловч далд 
+тархинд бичигдэж танил дотно болгож байгаа 
+хэлбэр юм. Энэ нь ялгаагүй цээжилж байгаатай 
+адилхан юм. Мэдээж зөв дуудлагатай болно</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card_info">
+          <img src="img/Capture3333.jpg">
+          <div class="card_body">
+            <h5>БИЧИГЛЭЛ</h5>
+            <p>Дуу болон дүрс ашиглан цээжлэж байгаа нь 
+сайн хэрэг ч гэсэн амьдрал ахуйд БИЧИГЛЭЛ 
+илүү  чухал  хэрэглэгддэг.  Дунд  сургуулийн 
+шалгалт  өгөхөөс  эхлүүлээд  гэрээ  хэлэлцээр 
+албан бичгүүд бүгд цаасан дээр текст болон 
+буудаг. Дуудлага ойролцоо ч бичиглэл ондоо 
+олон үг байдаг. Дуу дүрстэйгээ бичиглэл хамт 
+явах  нь  хичээл  болон  ажил  дээр  амжилт 
+гаргахад том түлхэц болно</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid devlopment_future_goal mx-2 py-5">
+  <div class="container ">
+    <div class="row px-8">
+      <div class="col-md-9 ">
+        <h2 class="section_title mb-5 text-center">КОНТЕНТЫН  ОНЦЛОГ ДАВУУ ТАЛУУД</h2>
+        <p>Контентын агуулга, сургалтын хөтөлбөрийг тухайн салбартаа мэргэшсэн гадаад дотоод багш 
+        нарын баг олон жилийн туршлагатай видео урлаачидтай хамтран бүтээж байгаа билээ. Тухайн 
+        цаг үедээ нийцсэн, сонирхолтой, төвөггүй ойлгогдох гэсэн зорилго дор боловсруулж байна.
+        Үгсийн сангаа амьдралд түгээмэл хэрэглэгдэх хэрэглээгээр нь категорт хувааж өгүүлбэрүүдийн 
+        хамт оруулав.</p>
+        <p>Дээрх өгүүлбэрүүд танин мэдэхүй, хөгжилтэй, амьдралд ойр, тренд хэллэг гэх зэргээр бичигдсэн. 
+        Цаашлаад 2 хэл хослуулан сурах ба Орос, Герман, Франц, Испани зэрэг хэлний сонголтуудыг 
+        нэмэхээр төлөвлөж байна.</p>  
+      </div>
+    </div>
+    <div class="row align-items-end card_wraper">
+      <div class="col-md-3">
+        <div class="card_info position-relative">
+          <p>Үг,  өгүүлбэр  бүхий  ерөнхий контент.  Англи,  Хятад, Солонгос, Япон</p>
+          <div class="card_body">
+            <h2>STEP 01</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card_info position-relative">
+          <p>Сурах бичгийн дагуух контент 
+            бүтээх. Ингэснээр хүүхэд анги 
+            дээрээ сурсан хичээлээ  давтан 
+            санах  ба  хоцрогдол  арилж 
+            ,цаашлаад  үгсийн  сангийн 
+            хувьд сурах бичгээсээ түрүүлэн 
+            цээжлэх ч боломжтой юм.</p>
+          <div class="card_body">
+            <h2>STEP 02</h2>
+          </div>
+        </div>
+        <div class="box_span2"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="card_info position-relative">
+          <p>Урлагаар  дамжуулан  хэлний 
+            мэдлэг  олгохоор  түвшин 
+            түвшинд  нь  таарсан  адал 
+            явдалт anime, shortfilm бүтээх 
+            зорилго  байна.  Мөн  гадаад 
+            дотоодын  кино,  дуу  клип 
+            зэргийг  задлан  тайлбарлаж 
+            сургалтын  хэлбэрт  хувиргах 
+            боломжтой.</p>
+          <div class="card_body">
+            <h2>STEP 03</h2>
+          </div>
+        </div>
+        <div class="box_span3"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="card_info position-relative">
+          <p>Хичээлийн хоцрогдлыг арилгах 
+            зорилго  бүхий  контентууд; 
+            Математик,  түүх,  газарзүй, 
+            биологи,  Монгол  өв  соёл 
+            зэрэг  видео  контент  болох 
+            боломжтой  хичээлүүдийг 
+            байршуулах боломжтой. Мөн 
+            Britanica  зэрэг  сонирхолтой 
+            ном сэтгүүлийг видео контент 
+            болгон  насан  туршийн 
+            мэдлэгийг  түгээх  төлөвлөгөө 
+            байна.</p>
+          <div class="card_body">
+            <h2>STEP 04</h2>
+          </div>
+        </div>
+        <div class="box_span4 d-flex justify-content-center align-items-center">
+          <img src="img/logo2.PNG">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="contact" class="container-fluid  py-5">
+  <div class="container mt-5 contact_form">
+    <div class="row">
+      <div class="col-lg-6 col-md-5">
+        <div class="contant_details">
+          <h2 class="section_title mb-3">Бидэнтэй холбогдоно уу</h2>
+          <p>Таны манай үйлчилгээтэй холбоотой 
+          санал хүсэлтээ энд бичиж бидэнтэй 
+          холбогдож илүү их мэдээллийг аваарай.</p> 
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-7 ">
+        <form class="contact_form" action="mailto:nobin15033@gmail.com" method="post" enctype="text/plain">
+          <div class="mb-2">
+            <label class="mb-3">Таны И-шуудан</label>
+            <input class="input" type="number" name="phone" placeholder="+00976">
+          </div>
+          <div class="mb-3">
+            <label class="mb-2">Таны утас</label>
+            <input class="input" type="text" name="mail" placeholder="name@mail.com">
+          </div>
+          <div class="mb-3">
+            <label class="mb-2">Таны нэр</label>
+            <input class="input" type="text" name="name" placeholder="Нэр">
+          </div>
+          <div class="mb-3">
+            <label class="mb-2">Таны захидал</label>
+            <textarea class="form-control " name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <input class="form_btn" type="submit" value="ИЛГЭЭХ" >
+          <a class="" href="#"></a>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            <!-- End Contact Form -->    
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+   
+  
+ 
+ 
+<footer class="container-fluid footer">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-md-4 col-4">
+        <h4>Холбоо барих</h4>
+        <ul class="mt-4">
+          <li><a href="#">88002088</a></li>
+          <li><a href="#">@gmail.com</a></li>
+          <li><a href="#">facebook.com</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-4 text-center">
+        <p>@copyright</p>
+      </div>
+      <div class="col-md-4 col-4 t">
+        <a href="#"><img src="img/logo.PNG"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- js file -->
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

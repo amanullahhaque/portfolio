@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+button:disabled,
+button[disabled=disabled] {
+    color:#fff;
+    border-color: #a0a0a0;
+    background-color: #a0a0a0;
+}
+
+button:disabled:hover,
+button:disabled:focus,
+button[disabled=disabled]:hover,
+button[disabled=disabled]:focus {
+    color:#fff;
+    border-color: #a0a0a0;
+    background-color: #a0a0a0;
+}
+.v-toast{
+    z-index: 99999 !important;
+}
+.clientSlider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+	background: #008BC7;
+
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+
+/* auth gradient */
+.auth-gradient {
+    background: linear-gradient(0deg, rgba(0, 139, 199, 0.08) 0%, rgba(0, 139, 199, 0.08) 100%), #FCFCFC;
+}
+.auth-reg {
+    background: linear-gradient(180deg, #008BC7 0%, #004564 100%);
+}
+
+
+.pac-container.pac-logo{
+    z-index: 999999999 !important;
+}
+
+
+.testimonial_slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background: #3498DB;
+};
+
+@layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none; 
+  }
+}
+@layer components {
+   
+    .active-link {
+        @apply after:opacity-100 text-primaryActiveText font-semibold relative after:content-[''] after:block after:w-[80%] after:h-[2px] after:mx-auto  after:bg-primaryLight after:transition after:duration-150 after:ease-in-out
+      }
+    .section_container {
+        @apply container 3xl:max-w-screen-2xl 2xl:max-w-screen-xl mx-auto 2xl:px-0 xl:px-20 md:px-10 px-5;
+    }
+    .section_space {
+        @apply md:py-20 py-10;
+    }
+    .scroll-margin {
+        @apply mt-24;
+    }
+    .menu-item {
+        @apply inline-block no-underline py-2 px-4 xl:text-base lg:text-sm text-xl font-semibold uppercase  hover:text-primaryActive;
+    }
+    .about-banner {
+        @apply md:h-dvh flex items-center font-open bg-cover bg-center bg-no-repeat relative md:py-0 py-28;
+    }
+    .primary_grid {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-[72px] gap-y-8 lg:gap-y-[46px] px-2 sm:px-5 mt-10 mb-20;
+    }
+    .section_inner_title {
+        @apply font-medium text-xl text-primaryText bg-whiteLight px-5 h-15 flex justify-between items-center cursor-pointer;
+    }
+    .primary_label {
+        @apply font-medium text-base text-primaryText inline-flex items-center gap-2;
+    }
+    .primary_input {
+        @apply w-full text-base text-primaryText font-normal px-4 py-2 min-h-[60px] h-15 border border-[#555555] rounded-lg bg-transparent focus:outline-none focus:bg-white focus:border-primaryLight mt-4;
+    }
+    .primary_button {
+        @apply font-medium text-sm text-primaryText border border-secondaryText w-[75px] h-10 py-2 rounded hover:bg-primaryDark hover:text-white hover:border-primaryDark transition-all ease-in-out duration-500 flex items-center justify-center gap-1;
+    }
+    .primary_label_checked {
+        @apply text-base text-primaryText font-normal border border-secondaryText h-16 rounded-lg flex items-center justify-center hover:border-[#00A6EE] hover:bg-[#00A6EE] peer-checked:text-xl peer-checked:text-whiteLight peer-checked:font-bold peer-checked:border-primaryLight peer-checked:bg-primaryLight cursor-pointer w-full;
+    }
+    .secondary_label {
+        @apply text-base text-neutralTextLight font-normal uppercase;
+    }
+    .secondary_input {
+        @apply w-full text-sm text-neutralTextLight font-normal bg-transparent h-14 border border-secondGrey rounded px-4 py-2 mt-3 outline-none;
+    }
+    .main_container {
+        @apply lg:container mx-auto lg:max-w-screen-2xl px-5 md:px-8 lg:px-14;
+    }
+
+    .section_container {
+        @apply lg:container mx-auto lg:max-w-screen-4xl px-5 md:px-8 lg:px-14;
+    }
+
+    .dashboard_container {
+        @apply px-4 md:px-6 lg:px-8 mx-auto;
+    }
+    .aside_container {
+        @apply px-4 md:px-6 lg:px-8 w-full py-10 min-h-full overflow-hidden;
+    }
+    .kanban_grid {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-x-5 lg:gap-x-8 gap-y-3    px-6;
+    }
+    .sub_menu {
+        @apply bg-white w-52 py-5 px-3 border border-whiteDark rounded space-y-2 z-50;
+    }
+    .sub_menu_item {
+        @apply block font-normal text-sm text-secondaryText py-2 px-4 border rounded hover:bg-whiteLight;
+    }
+    .search_filter_grid {
+        @apply sm:flex items-center justify-between gap-5 pt-3.5 pb-6 border-t border-whiteLight;
+    }
+    .filter_grid {
+        @apply grid grid-cols-3 sm:flex flex-wrap sm:justify-end items-center gap-3 mt-5 sm:mt-0;
+    }
+    .primary_filter {
+        @apply inline-block text-center font-medium text-sm text-secondaryText py-2 sm:px-4 rounded border hover:bg-whiteLight cursor-pointer w-full peer-checked:text-white peer-checked:bg-primaryLight/80 peer-hover:bg-whiteLight peer-hover:text-primaryText flex-1;
+    }
+    .primary_add_button {
+        @apply flex justify-center items-center gap-3 font-semibold text-base text-whiteLight w-full xsm:w-48 bg-primaryLight py-2.5 xsm:py-6 rounded hover:opacity-80 ml-auto mt-1 xsm:mt-0;
+    }
+    .action_button {
+        @apply font-medium text-sm text-secondaryText border border-secondaryText rounded py-2 px-2 w-20 hover:border-primaryDark hover:text-white hover:bg-primaryDark flex items-center justify-center gap-1.5;
+    }
+    .action_button:disabled {
+        @apply opacity-50 cursor-not-allowed bg-gray-200 text-gray-400 border-gray-400;
+    }
+    .back_btn {
+        @apply text-sm text-secondaryText hover:bg-primaryDark rounded py-1 hover:text-whiteLight border border-secondaryText w-24 flex items-center justify-center gap-2 mb-5;
+    }
+    .row_btn {
+        @apply text-sm text-primaryText font-normal w-18 h-9 inline-flex items-center justify-center bg-transparent rounded border border-primaryText hover:text-white hover:bg-primaryLight hover:border-primaryLight;
+    }
+    .paginate {
+        @apply flex items-center justify-end pt-10;
+    }
+    .button_group {
+        @apply flex items-center justify-end space-x-3 pt-15;
+    }
+
+    /* dealership dashboard */
+    .dashboard_sub_item{
+        @apply inline-flex items-center justify-start gap-3 text-base font-normal text-neutralText hover:text-primaryLight active:text-primaryLight;
+    }
+
+    .dashboard_input {
+        @apply w-full text-base text-neutralText font-normal p-4 min-h-[60px] h-15 border border-[#7A8796] rounded bg-transparent focus:outline-none focus:border-primaryLight placeholder:text-[#7A8796] placeholder:text-base placeholder:font-normal;
+    }
+
+    /* form submit button */
+    .submit_button{
+        @apply text-base font-medium text-white w-40 h-15 rounded bg-primaryLight mt-5;
+    }
+
+    /* toggle icon class */
+    .active-toggle-icon{
+        @apply rotate-180 transition-all duration-700
+    }
+
+    /* auth */
+    .auth_input {
+        @apply w-full h-13 px-4 text-base text-primaryText font-maven placeholder:text-neutralTextTintsSixty font-normal bg-transparent border-b-2 border-neutralTextTintsFifty rounded-lg outline-none focus:border-primaryLight;
+    }
+    .auth_btn {
+        @apply w-full h-13 flex items-center justify-center bg-primaryLight text-base text-white font-semibold font-maven rounded-lg hover:bg-primaryDark;
+    }
+    
+}

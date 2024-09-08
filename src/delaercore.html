@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- font aswsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- add google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="./output.css" rel="stylesheet" />
+</head>
+
+<body class="font-maven scroll-smooth" style="">
+
+  <header class="bg-delprimaryActiveText text-delprimaryDarkest py-[9px]">
+    <div class="flex flex-col items-center justify-center gap-6 mx-auto sm:w-1/2 sm:flex-row">
+      <h3 class="text-base font-bold text-white !font-maven">50% OFF ON BLACK FRIDAY</h3>
+      <div class="flex gap-1 place-content-center font-maven" x-data="{
+            expiry: new Date().setDate(new Date().getDate() + 3),
+            remaining: null,
+            init() {
+                this.setRemaining();
+                setInterval(() => {
+                    this.setRemaining();
+                }, 1000);
+            },
+            setRemaining() {
+                const diff = this.expiry - new Date().getTime();
+                this.remaining = parseInt(diff / 1000);
+            },
+            days() {
+                return {
+                    value: this.remaining / 86400,
+                    remaining: this.remaining % 86400
+                };
+            },
+            hours() {
+                return {
+                    value: this.days().remaining / 3600,
+                    remaining: this.days().remaining % 3600
+                };
+            },
+            minutes() {
+                return {
+                    value: this.hours().remaining / 60,
+                    remaining: this.hours().remaining % 60
+                };
+            },
+            seconds() {
+                return {
+                    value: this.minutes().remaining,
+                };
+            },
+            format(value) {
+                return ('0' + parseInt(value)).slice(-2);
+            },
+            time() {
+                return {
+                    days: this.format(this.days().value),
+                    hours: this.format(this.hours().value),
+                    minutes: this.format(this.minutes().value),
+                    seconds: this.format(this.seconds().value),
+                };
+            }
+        }" x-init="init();">
+        <h1
+          class="w-[30px] flex items-center text-sm leading-[16.45px] font-bold bg-white px-[6px] py-[7px] rounded font-maven"
+          x-text="time().days + ' '">02 </h1>
+        <span class="text-white font-bold  !font-maven">:</span>
+        <h1 class="w-[30px] text-sm font-bold bg-white px-[6px] py-[7px] rounded !font-maven"
+          x-text="time().hours + ' '">23 </h1>
+        <span class="text-white font-bold !font-maven">:</span>
+        <h1
+          class="w-[30px] flex items-center text-sm leading-[16.45px] font-bold bg-white px-[6px] py-[7px] rounded font-maven"
+          x-text="time().minutes + ' '">59 </h1>
+        <span class="text-white font-bold !font-maven">:</span>
+        <h1
+          class="w-[30px] flex items-center text-sm leading-[16.45px] font-bold bg-white px-[6px] py-[7px] rounded font-maven"
+          x-text="time().seconds + ' '">28 </h1>
+      </div>
+    </div>
+  </header>
+  <nav class="header bg-white py-4 shadow-[0px_4px_12px_0px_#00000014] fixed w-full z-50"
+    :class="{ '!bg-transparent shadow-none transition duration-100 py-0 top-0' : showBar }" x-data="{ showBar: false }"
+    @scroll.window="showBar = (window.pageYOffset > 20) ? true : false">
+    <div class="section_container"
+      :class="{ 'bg-white rounded-xl shadow-[0px_0px_24px_0px_#33333329] transition duration-100 py-4' : showBar }">
+      <div class="flex items-center justify-between align-middle header_details">
+        <div class="header-logo max-w-[100px] sm:max-w-[150px]">
+          <a href="http://dealercore.test">
+            <img src="asset/img/blue_logo.png" alt="logo" class="w-full">
+          </a>
+        </div>
+        <div class="hidden header-menu lg:block">
+          <ul class="flex items-center gap-5">
+            <li>
+              <a href="#about_us" class="inline-block text-base font-normal group nav-link">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#feaTures" class="inline-block text-base font-normal group nav-link">
+                Features
+              </a>
+            </li>
+            <li>
+              <a href="#package" class="inline-block text-base font-normal group nav-link">
+                Packages
+              </a>
+            </li>
+            <li>
+              <a href="#client_Sec" class="inline-block text-base font-normal group nav-link">
+                Testimonials
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center justify-between gap-4 header-button sm:gap-8">
+          <a class="relative" href="#">
+            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.10516 15.6579C6.8241 15.6579 6.54936 15.7412 6.31567 15.8974C6.08197 16.0535 5.89983 16.2755 5.79228 16.5351C5.68472 16.7948 5.65658 17.0805 5.71141 17.3562C5.76624 17.6318 5.90159 17.885 6.10032 18.0838C6.29906 18.2825 6.55227 18.4179 6.82793 18.4727C7.10358 18.5275 7.38931 18.4994 7.64897 18.3918C7.90864 18.2843 8.13058 18.1021 8.28672 17.8684C8.44287 17.6348 8.52621 17.36 8.52621 17.0789C8.52621 16.7021 8.3765 16.3406 8.11 16.0741C7.8435 15.8076 7.48205 15.6579 7.10516 15.6579ZM17.0525 12.8158H5.68411C5.43285 12.8158 5.19188 12.716 5.01422 12.5383C4.83655 12.3606 4.73674 12.1197 4.73674 11.8684C4.73674 11.6172 4.83655 11.3762 5.01422 11.1985C5.19188 11.0209 5.43285 10.9211 5.68411 10.9211H13.7284C14.3455 10.9191 14.9454 10.7171 15.4381 10.3455C15.9308 9.9739 16.2899 9.45262 16.4614 8.85979L17.9634 3.60254C18.0037 3.46154 18.0107 3.31312 17.9839 3.16895C17.957 3.02478 17.8971 2.8888 17.8088 2.77172C17.7205 2.65464 17.6063 2.55966 17.475 2.49424C17.3438 2.42882 17.1992 2.39476 17.0525 2.39474H5.43691C5.24079 1.84276 4.87926 1.36467 4.40158 1.02561C3.9239 0.686554 3.3533 0.503013 2.76753 0.5H1.89463C1.64338 0.5 1.40241 0.599812 1.22474 0.777478C1.04708 0.955144 0.947266 1.19611 0.947266 1.44737C0.947266 1.69863 1.04708 1.93959 1.22474 2.11726C1.40241 2.29492 1.64338 2.39474 1.89463 2.39474H2.76753C2.97319 2.39546 3.17308 2.46277 3.33727 2.58661C3.50147 2.71044 3.62113 2.88413 3.67835 3.08167L3.82568 3.59774L3.82591 3.60254L5.38019 9.04251C4.65693 9.12031 3.99104 9.47247 3.51962 10.0265C3.0482 10.5805 2.80715 11.2942 2.8461 12.0205C2.88505 12.7469 3.20103 13.4307 3.72899 13.9312C4.25694 14.4316 4.95668 14.7105 5.68411 14.7105H17.0525C17.3038 14.7105 17.5448 14.6107 17.7224 14.433C17.9001 14.2554 17.9999 14.0144 17.9999 13.7632C17.9999 13.5119 17.9001 13.2709 17.7224 13.0933C17.5448 12.9156 17.3038 12.8158 17.0525 12.8158ZM15.7966 4.28947L14.6397 8.33892C14.5825 8.53662 14.4628 8.71047 14.2985 8.8344C14.1342 8.95833 13.9342 9.02567 13.7284 9.02632H7.34616L7.10464 8.18106L5.99335 4.28947H15.7966ZM14.6841 15.6579C14.403 15.6579 14.1283 15.7412 13.8946 15.8974C13.6609 16.0535 13.4788 16.2755 13.3712 16.5351C13.2637 16.7948 13.2355 17.0805 13.2904 17.3562C13.3452 17.6318 13.4805 17.885 13.6793 18.0838C13.878 18.2825 14.1312 18.4179 14.4069 18.4727C14.6825 18.5275 14.9683 18.4994 15.2279 18.3918C15.4876 18.2843 15.7095 18.1021 15.8657 17.8684C16.0218 17.6348 16.1052 17.36 16.1052 17.0789C16.1052 16.7021 15.9554 16.3406 15.6889 16.0741C15.4224 15.8076 15.061 15.6579 14.6841 15.6579Z"
+                fill="white"></path>
+            </svg>
+          </a>
+          <a class="z-10 items-center hidden gap-6 p-2 pr-6 text-base font-semibold leading-8 duration-500 ease-in-out rounded-full group bg-delprimaryLight hover:bg-delprimaryDark text-whiteLight lg:flex"
+            href="/login"><img class="z-10 w-10 h-10 duration-500 ease-in-out origin-right group-hover:translate-x-20"
+              src="asset/img/btnExclude.png" alt="not found"><span
+              class="group-hover:-translate-x-[3.3rem] origin-left duration-500 ease-in-out">Login</span></a>
+
+
+
+
+          <!-- mobile menu icon -->
+          <div class="lg:hidden" x-data="{ open: false }">
+            <button type="button" class="w-full align-middle" x-on:click="open = ! open">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-8 text-delprimaryActiveText ">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+                </path>
+              </svg>
+
+            </button>
+            <!-- mobile menu -->
+            <div
+              class="absolute left-0 w-full top-full transition-all duration-700 bg-delprimaryDark py-8 px-[55px] lg:hidden z-50"
+              x-show="open" x-transition:enter="transition ease-in-out duration-300"
+              x-transition:enter-start="opacity-0 transform scale-y-0 -translate-y-1/2"
+              x-transition:enter-end="opacity-100 transform scale-y-100 translate-y-0"
+              x-transition:leave="transition ease-in-out duration-300"
+              x-transition:leave-start="opacity-100 transform scale-y-100 translate-y-0"
+              x-transition:leave-end="opacity-0 transform scale-y-0 -translate-y-1/2" style="display: none;">
+              <ul class="flex flex-col items-center justify-center pb-6 space-y-4">
+                <li>
+                  <a href="about" class="inline-block text-base font-normal text-white group nav-link">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#feaTures" class="inline-block text-base font-normal text-white group nav-link">
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a href="#package" class="inline-block text-base font-normal text-white group nav-link">
+                    Packages
+                  </a>
+                </li>
+                <li>
+                  <a href="#client_Sec" class="inline-block text-base font-normal text-white group nav-link">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="/login"
+                    class="font-normal text-base text-whiteLight inline-block group hover:after:opacity-100 hover:text-delprimaryDarkest hover:font-semibold relative after:content-[''] after:block after:w-[80%] after:h-[2px] after:mx-auto  after:bg-delprimaryLight after:opacity-0  after:transition after:duration-150 after:ease-in-out">
+                    Login
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== nav section start ====== -->
+
+  <div class="bg-hero bg-no-repeat bg-center bg-cover py-14 bannerText font-maven pb-[84.62px] mt-[88px]">
+    <div class="section_container ">
+      <div class="flex flex-col justify-center max-w-screen-lg px-4 mx-auto text-center lg:px-24">
+        <h1 class="text-2xl font-black lg:text-6xl xl:text-5xl sm:text-4xl text-bannerText">
+          An intelligent solution for your dealership business
+        </h1>
+        <p class="mt-6 text-base text-delprimarySecondary">
+          Dealercore is an all-in-one dealership management tool designed to manage your entire vehicle inventory in one
+          place, with a host of integrated features to elevate your business.
+        </p>
+        <div class="flex flex-col items-center justify-center gap-6 mt-10 sm:flex-row">
+          <a href="register"
+            class="flex items-center gap-6 p-2 pr-6 text-base font-semibold leading-8 rounded-full group bg-delprimaryLight hover:bg-delprimaryDark text-whiteLight">
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-whiteLight text-delprimaryDark group-hover:translate-x-[9.5rem] origin-right duration-500 ease-in-out z-10 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+              </svg>
+            </div>
+            <span class="group-hover:-translate-x-[3.3rem] origin-left duration-500 ease-in-out">
+              Start FREE Trial
+            </span>
+          </a>
+          <a class="flex items-center gap-6 p-2 pr-6 text-base font-semibold leading-8 border rounded-full group hover:bg-delprimaryDark hover:border-delprimaryDark border-delprimaryLight text-delprimaryLight hover:text-whiteLight "
+            href="#">
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-delprimaryLight text-white group-hover:bg-whiteLight group-hover:text-delprimaryDark group-hover:translate-x-[7.7rem] origin-right duration-500 ease-in-out z-10 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+              </svg>
+            </div>
+            <span class="group-hover:-translate-x-[3.3rem] origin-left duration-500 ease-in-out">
+              Preview DC
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-12 px-4 pt-10 sm:flex-row sm:gap-0">
+        <div class="sm:w-[39.7%] relative flex sm:flex-row flex-col sm:gap-0 gpa-6 items-center">
+          <img class="w-[82%]" src="asset/img/banner_item_car2.png" alt="image">
+
+          <div class="w-[23%] sm:-ml-[4%] h-full flex flex-col items-center">
+            <div class="flex items-center h-full rotate-90 sm:rotate-0 sm:mt-0">
+              <img class="sm:w-[31%] " src="asset/img/arrow_ring.png" alt="image">
+              <img class="sm:w-[83%] -ml-[1.1rem] " src="asset/img/long_arrow_right.png" alt="image">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="sm:w-[17%] relative">
+          <img class="object-cover w-full" src="asset/img/banner_ring_eff.png" alt="image">
+
+          <div class="absolute top-0 left-0 w-full h-full ">
+            <div class="w-[72px] mx-auto flex items-center justify-center h-full relative">
+              <img class="z-10 w-full" src="asset/img/meter_static.png" alt="image">
+              <div class="w-[52px] h-full absolute top-0 flex items-center">
+                <img class="w-full animate-[spin_6s_linear_infinite]" src="asset/img/DynamicMeter.png" alt="image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:w-[42%] flex sm:flex-row flex-col justify-between items-center gap-4">
+
+          <div class="flex items-center sm:w-[21%] h-full sm:rotate-0 rotate-90 sm:mt-0 mt-6">
+            <img class="w-3/5 sm:w-full" src="asset/img/banner_long_arrow_right.png" alt="image">
+          </div>
+
+          <img class="w-[85%] h-full" src="asset/img/banner_purchase_analysis2.png" alt="image">
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="about_us"
+    class="bg-neutralArtBoard bg-no-repeat bg-center bg-cover font-maven text-delprimaryText lg:pt-[120px] py-16 lg:pb-[135px]">
+    <div class="section_container">
+      <div class="lg:w-[46%] sm:w-3/4 mx-auto text-center">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl leading-[56.4px] font-bold mb-6">
+          An Unified Tool
+        </h2>
+        <p class="text-xl font-medium text-delprimarySecondary">
+          Manage all your dealership operations on one platform with customizable solutions that scale with your
+          business needs.
+        </p>
+      </div>
+      <div class="flex flex-col items-stretch gap-4 pt-1 mt-24 xl:flex-row xl:gap-8">
+        <div class="xl:w-[70.5%] flex flex-col xl:gap-8 gap-4">
+          <div class="flex flex-col gap-4 sm:flex-row xl:gap-8">
+            <div class="lg:w-[37%] sm:w-2/5 shadow-[0px_4px_24px_0px_#00000029] rounded-3xl 2xl:p-8 p-5">
+              <figcaption class="flex items-center mb-4 space-x-3">
+                <img src="asset/img/inventory_itemicon.png" alt=""
+                  class="flex-none object-cover rounded-full w-11 h-11">
+                <span class="text-xl font-bold xl:text-2xl">
+                  Inventory
+                </span>
+              </figcaption>
+              <p class="text-base text-delprimarySecondary">
+                Gain complete visibility into stock levels, vehicle details, and performance metrics to make informed
+                decisions swiftly.
+              </p>
+              <div class="flex items-center justify-between gap-4 mt-8 2xl:gap-20">
+                <div>
+                  <h5 class="mb-3 text-2xl font-bold">
+                    5665
+                  </h5>
+                  <p class="text-base text-delprimarySecondary">
+                    Total inventory for this month
+                  </p>
+                </div>
+
+                <div class="mr-6">
+                  <div x-data="{
+                                      percent: 70,
+                                      radius: 50,
+                                      circumference: 314.1592653589793,
+                                      init() {
+                                          this.$watch('percent', value => {
+                                              this.animateProgress(value);
+                                          });
+                                      },
+                                      animateProgress(value) {
+                                          const circle = this.$refs.circle;
+                                          const offset = this.circumference - (value / 100) * this.circumference;
+                                          circle.style.strokeDashoffset = offset;
+                                      }
+                                  }"
+                    class="w-[120px] h-[120px] flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full relative">
+                    <svg class="w-full h-full transform translate-x-1 translate-y-1" aria-hidden="true">
+                      <circle class="text-[#CCE8F4]" stroke-width="10" stroke="currentColor" fill="transparent"
+                        :r="radius" cx="60" cy="60" r="50"></circle>
+                      <circle x-ref="circle" class="text-delprimaryActiveText" stroke-width="10"
+                        :stroke-dasharray="circumference"
+                        :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
+                        stroke="currentColor" fill="transparent" :r="radius" cx="60" cy="60"
+                        stroke-dasharray="314.1592653589793" stroke-dashoffset="94.24777960769381" r="50"></circle>
+                    </svg>
+                    <div class="absolute flex items-center justify-center w-full h-full text-2xl top-1 left-1">
+                      <h5
+                        class="flex justify-center items-center text-whiteLight text-base font-semibold w-[53px] h-[53px] bg-delprimaryActiveText rounded-full px-[5.27px] py-[14.6px]">
+                        <span x-text="`${percent}%`">70%</span>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-6 mt-8">
+                <button class="flex items-center gap-2 text-sm font-medium focus:outline-none">
+                  <span class="w-[14px] h-[14px] bg-delprimaryLight rounded-full block"></span>
+                  stock
+                </button>
+                <button class="flex items-center gap-2 text-sm font-medium focus:outline-none">
+                  <span class="w-[14px] h-[14px] bg-[#CCE8F4] rounded-full block"></span>
+                  Out of stock
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:w-[63%] sm:w-3/5 shadow-[0px_4px_24px_0px_#00000029] rounded-3xl 2xl:p-8 p-5">
+              <figcaption class="flex items-center mb-4 space-x-3">
+                <img src="asset/img/smart_aiassist_icon.png" alt="" class="object-cover rounded-full w-11 h-11">
+                <span class="text-xl font-bold xl:text-2xl">
+                  Smart AI assistance
+                </span>
+              </figcaption>
+              <p class="text-base text-delprimarySecondary">
+                Leverage Smart AI Assistance to streamline your operations, providing real-time insights and automated
+                recommendations. Enhance decision-making with intelligent tools that adapt to your business needs.
+              </p>
+              <div class="relative">
+                <img src="asset/img/smart_aiassistant_filer.png" alt="image" class="object-cover w-full">
+                <div class="absolute bottom-0 flex items-center justify-center w-full h-full">
+                  <img src="asset/img/smart_aiassist_stars.png" alt="image"
+                    class="sm:w-[159.03px] sm:h-[170.22px] w-24 h-24">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 sm:flex-row xl:gap-8">
+            <div class="lg:w-[63%] sm:w-3/5 shadow-[0px_4px_24px_0px_#00000029] rounded-3xl 2xl:p-8 p-5">
+              <figcaption class="flex items-center mb-4 space-x-3">
+                <img src="asset/img/stock-keeping-uniticon.png" alt="" class="object-cover rounded-full w-11 h-11">
+                <span class="text-xl font-bold xl:text-2xl">
+                  Business Growth
+                </span>
+              </figcaption>
+              <p id="check_it" class="text-base text-delprimarySecondary">
+                Accelerate your business growth with data-driven insights and strategic tools. Enhance your market
+                presence, optimise operations, and drive profitability with our all-in-one platform.
+              </p>
+              <div class="relative flex gap-6 mt-8">
+                <div class="w-1/2 ">
+                  <img src="asset/img/salaryAnalaysis2.png" alt="image" class="w-full">
+                </div>
+                <div class="w-1/2 ">
+                  <img src="asset/img/perchaseAnalysis2.png" alt="image" class="w-full">
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:w-[37%] sm:w-2/5 shadow-[0px_4px_24px_0px_#00000029] rounded-3xl 2xl:p-8 p-4">
+              <figcaption class="flex items-center mb-4 space-x-3">
+                <img src="asset/img/Kanban-board.png" alt="" class="flex-none object-cover rounded-full w-11 h-11">
+                <span class="text-xl font-bold xl:text-2xl">
+                  Kanban board
+                </span>
+              </figcaption>
+              <p class="text-base text-delprimarySecondary">
+                Visualize and manage your workflow with our intuitive Kanban Board and control every single thing of
+                your dealership from one place.
+              </p>
+              <div class="mt-10">
+                <img src="asset/img/in-Stock.png" alt="image" class="w-full">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="xl:w-[29.5%] self-stretch shadow-[0px_4px_24px_0px_#00000029] rounded-3xl">
+          <div class="p-5 pb-20 2xl:p-8 2xl:pb-20">
+            <figcaption class="flex items-center mb-4 space-x-3">
+              <img src="asset/img/Stuff-management.png" alt="" class="object-cover rounded-full w-11 h-11">
+              <span class="text-xl font-bold xl:text-2xl"> Stuff management</span>
+            </figcaption>
+            <p class="text-base text-delprimarySecondary">Leverage Smart AI Assistance to streamline your operations,
+              providing real-time insights and automated recommendations. Enhance decision-making with intelligent tools
+              that adapt to your business needs.</p>
+            <div class="relative z-40">
+              <div class="absolute left-0 w-full h-full -bottom-[22.61px]  -z-10 px-[31.88px]">
+                <div class="w-full h-full bg-[#007AAE] rounded-xl"></div>
+              </div>
+              <div class="absolute left-0 w-full h-full -bottom-12  -z-20 px-[54.80px]">
+                <div class="w-full h-full bg-[#7ec4e1] rounded-xl"></div>
+              </div>
+              <div
+                class="bg-delprimaryDark rounded-xl xl:pt-[59px] pt-8 pb-[32.28px] 4xl:px-[34px] px-4 xl:mt-12 mt-8 mb-0">
+                <div>
+                  <a class="block w-[220px] h-[220px] mx-auto" href="#">
+                    <img class="w-full h-full" src="asset/img/userPhoto.png" alt="image">
+                  </a>
+                  <div class="mt-6 text-center text-white">
+                    <h4 class="text-2xl font-bold ">Kanban board</h4>
+                    <h6 class="mt-1 text-base font-medium text-whiteLight">Product manager</h6>
+                  </div>
+                  <ul
+                    class="flex sm:flex-row flex-col text-center justify-center border-b border-white gap-2 2xl:mt-[90px] mt-12 pb-[26px]">
+                    <li class="sm:text-[10px] text-lg font-medium bg-[#F2F2F266] text-white 2xl:p-3 p-2 rounded-full">
+                      Dealer principal
+                    </li>
+                    <li class="sm:text-[10px] text-lg font-medium bg-[#F2F2F266] text-white 2xl:p-3 p-2 rounded-full">
+                      Dealer principal
+                    </li>
+                    <li class="sm:text-[10px] text-lg font-medium bg-[#F2F2F266] text-white 2xl:p-3 p-2 rounded-full">
+                      Dealer principal
+                    </li>
+                  </ul>
+
+                  <ul class="w-4/5 mx-auto flex justify-between gap-2 mt-[19.8px]">
+                    <li class="w-15 h-[50px] flex justify-center items-center hover:bg-[#008BC74D] rounded-full">
+                      <img class="object-contain h-6 rounded-full w-7" src="asset/img/calender-icon.png" alt="image">
+                    </li>
+                    <li class="w-15 h-[50px] flex justify-center items-center hover:bg-[#008BC74D] rounded-full">
+                      <img class="object-contain h-6 rounded-full w-7" src="asset/img/note-icon.png" alt="image">
+                    </li>
+                    <li class="w-15 h-[50px] flex justify-center items-center hover:bg-[#008BC74D] rounded-full">
+                      <img class="object-contain h-6 rounded-full w-7" src="asset/img/Notification-icon.png"
+                        alt="image">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section
+    class="bg-toolBg bg-no-repeat bg-center bg-cover font-maven text-delprimaryText lg:pt-[120px] py-16 lg:pb-[135px]">
+    <div class="section_container">
+      <div class="2xl:w-[55%] sm:w-3/4 mx-auto text-center">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl xl:leading-[56.4px] font-bold mb-6">Leverage the Most Powerful
+          AI-Integrated Tool to Propel Your Business into Next Generation.</h2>
+      </div>
+      <div class="flex sm:flex-row flex-col items-center mt-[100px] sm:gap-2 gap-12">
+        <div class="sm:w-2/5">
+          <img src="asset/img/aiEnterface.png" alt="image" class="w-full h-full">
+        </div>
+        <div class="sm:w-1/5 ">
+          <img src="asset/img/ai-genertatround.png" alt="image" class="w-full h-full">
+        </div>
+        <div class="sm:w-2/5">
+          <img src="asset/img/ail-ead2.png" alt="image" class="w-full h-full">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="bg-dealershipMbg  bg-no-repeat bg-[-267px_37%] bg-cover font-maven text-delprimaryText lg:pt-[120px] py-16 lg:pb-[135px]">
+    <div class="section_container">
+      <div class="2xl:w-[55%] sm:w-3/4 mx-auto text-center">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl xl:leading-[56.4px] font-bold mb-6">The Most Advanced Dealership
+          Management System for Your Business.</h2>
+      </div>
+      <div class="overflow-y-auto 2xl:h-[650px] lg:h-[530px] sm:h-[740px] h-[570px] hide-scrollbar">
+        <div class="xl:w-[93%] mx-auto flex lg:flex-row flex-col items-center lg:mt-40 mt-16 section">
+          <div class="relative order-first w-full lg:w-1/2 lg:order-last">
+            <img src="asset/img/dashboard-pro-view.png" alt="image" class="w-[88%] relative z-10">
+            <img src="asset/img/rotate-effect.png" alt="image"
+              class="w-[47.3%] absolute -top-[3.7rem] right-0 animate-[spin_6s_linear_infinite]">
+          </div>
+          <div class="lg:w-1/2 w-full px-[6%]">
+            <h3 class="xl:text-[32px] md:text-2xl text-xxl xl:leading-[42px] font-bold md:mb-6 mb-3">Navigate your
+              dealership operations effortlessly with our intuitive dashboard.</h3>
+            <p class="text-lg font-medium text-delprimarySecondary md:text-xl">Access real-time data, monitor key
+              metrics,
+              and streamline decision-making all from one user-friendly interface.</p>
+          </div>
+
+        </div>
+
+        <div class="xl:w-[93%] mx-auto flex lg:flex-row flex-col items-center lg:mt-40 mt-24 section">
+          <div class="relative order-first w-full lg:w-1/2 lg:order-last">
+            <img src="asset/img/Advertise-selead.png" alt="image" class="w-[88%] relative z-10">
+
+          </div>
+          <div class="lg:w-1/2 w-full px-[6%]">
+            <h3 class="xl:text-[32px] md:text-2xl text-xxl xl:leading-[42px] font-bold md:mb-6 mb-3">Advertise and lead
+              management</h3>
+            <p class="text-lg font-medium text-delprimarySecondary md:text-xl">Streamline your advertising and lead
+              management with our integrated tools. Boost your reach, capture quality leads, and convert them
+              efficiently to drive your dealership's success.</p>
+          </div>
+
+        </div>
+
+        <div class="xl:w-[93%] mx-auto flex lg:flex-row flex-col items-center lg:mt-40 mt-24 section">
+          <div class="relative order-first w-full lg:w-1/2 lg:order-last">
+            <img src="asset/img/boost-your-sales.png" alt="image" class="w-[88%] relative z-10">
+
+          </div>
+          <div class="lg:w-1/2 w-full px-[6%]">
+            <h3 class="xl:text-[32px] md:text-2xl text-xxl xl:leading-[42px] font-bold md:mb-6 mb-3">Boost your sales
+              with two stunning website powered by DealerCore</h3>
+            <p class="text-lg font-medium text-delprimarySecondary md:text-xl">Enhance your sales with a visually
+              stunning
+              website designed by DealerCore, optimised to attract and convert customers effectively.</p>
+          </div>
+
+        </div>
+
+        <div class="xl:w-[93%] mx-auto flex lg:flex-row flex-col items-center lg:mt-40 mt-24 section">
+          <div class="relative order-first w-full lg:w-1/2 lg:order-last">
+            <img src="asset/img/cutting-edge-safety.png" alt="image" class="w-[88%] relative z-10">
+
+          </div>
+          <div class="lg:w-1/2 w-full px-[6%]">
+            <h3 class="xl:text-[32px] md:text-2xl text-xxl xl:leading-[42px] font-bold md:mb-6 mb-3">Cutting-edge safety
+              and inspection services</h3>
+            <p class="text-lg font-medium text-delprimarySecondary md:text-xl">Experience state-of-the-art safety and
+              inspection services by RedBook, seamlessly delivered through our digital platform.</p>
+          </div>
+
+        </div>
+
+        <div class="xl:w-[93%] mx-auto flex lg:flex-row flex-col items-center lg:mt-40 mt-24 section">
+          <div class="relative order-first w-full lg:w-1/2 lg:order-last">
+            <img src="asset/img/seamless-deal-management.png" alt="image" class="w-[88%] relative z-10">
+
+          </div>
+          <div class="lg:w-1/2 w-full px-[6%]">
+            <h3 class="xl:text-[32px] md:text-2xl text-xxl xl:leading-[42px] font-bold md:mb-6 mb-3">Seamless deal
+              management and action from one place</h3>
+            <p class="text-lg font-medium text-delprimarySecondary md:text-xl">Manage all your deals, update statuses,
+              take
+              notes, and handle document management seamlessly with our Kanban Board. Optimise your time and experience
+              smooth, efficient management for buying and selling.</p>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="feaTures"
+    class="bg-workFeature bg-no-repeat bg-center bg-cover font-maven text-delprimaryText lg:pt-[120px] py-16 lg:pb-[135px]">
+    <div class="section_container">
+      <div class="mx-auto text-center 2xl:w-1/2 sm:w-3/5">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl xl:leading-[56.4px] font-bold mb-6">Comprehensive features designed
+          to simplify your work</h2>
+        <p class="text-lg font-medium text-delprimarySecondary sm:text-xl">Navigate your business with the most advanced
+          management features from DealerCore and transform your operations for a more dynamic and efficient workflow.
+        </p>
+      </div>
+      <div x-data="{ showMore: false }" class="">
+        <div class="flex flex-wrap justify-center gap-y-8 gap-[2%] mt-[100px] mb-[60px]">
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/multi_yard.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Multi Yard</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/unlimitedUser.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Unlimited Users</h2>
+              <p class="text-base leading-relaxed">Give access of Dealercore to all your staff, enabling them
+                to operate from any device.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/userPerSettomg.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">User Permission Settings</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/inventoryIcon.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Inventory</h2>
+              <p class="text-base leading-relaxed">Permission Settings refer to the controls that allow users
+                to manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/consignment.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Consignment</h2>
+              <p class="text-base leading-relaxed">Permission Settings refer to the controls that allow users
+                to manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/valuationIcon.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Valuation</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/textDrive.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Test Drive</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/advertisingM.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Advertising Management</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/evenManager.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Event Management</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/remender.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Reminder</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/leadmanagement.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Leads Management</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+
+
+
+
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/reporting_icon.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Reporting</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/Inspection.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Inspection</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/Multi-Theme.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Multi Theme</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033] p-3 mb-4">
+                <img src="asset/img/fbshop.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Facebook Shop</h2>
+              <p class="text-base leading-relaxed">Mobility is one area that’s experienced significant growth</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                   p-3 mb-4">
+                <img src="asset/img/Instagram-Shop.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Instagram Shop</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                   p-3 mb-4">
+                <img src="asset/img/Chart-Account.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Chart of Account</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Xero-Integration.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Xero Integration</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/E-signature-Integration.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">E-signature Integration</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Kanban-Board.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Kanban Board</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Live-support.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Live support</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Notes.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Notes</h2>
+              <p class="text-base leading-relaxed">Purchasing a PPSR Certificate will allow it will be saved to the
+                vehicle automatically.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Finance-Application.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Finance Application</h2>
+              <p class="text-base leading-relaxed">Forms, invoices, and your adverts are printed and sent to your
+                advertisers automatically.</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/SMS-Email.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">SMS &amp; Email Marketing</h2>
+              <p class="text-base leading-relaxed">Mobility is one area that’s experienced significant growth</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Mobile-Application.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Mobile Application</h2>
+              <p class="text-base leading-relaxed">Mobility is one area that’s experienced significant growth</p>
+            </div>
+          </div>
+          <div x-show="showMore"
+            class="card hover:scale-105 duration-700 ease-in-out hover:bg-[#F0F8FC] shadow-[0px_0px_8px_0px_#1010101F] bg-white xl:w-[23.5%] sm:w-[32%] w-full p-6 rounded-xl"
+            style="display: none;">
+            <div class="">
+              <div
+                class="w-14 h-14 bg-transparent shadow-[0px_0px_8px_0px_#10101033]                                  p-3 mb-4">
+                <img src="asset/img/Automatic-Transaction.png" alt="image" class="w-full h-full">
+              </div>
+              <h2 class="mb-2 text-xl font-bold lg:text-2xl">Automatic Transaction</h2>
+              <p class="text-base leading-relaxed">Permission Settings&nbsp;refer to the controls that allow users to
+                manage and regulate how apps interact with their devices.</p>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <button @click="showMore = !showMore"
+          class="group border hover:bg-delprimaryDark hover:border-delprimaryDark border-delprimaryLight font-semibold text-base leading-8 text-delprimaryLight hover:text-whiteLight flex items-center gap-6 p-2 pr-6 rounded-full w-[181px] mx-auto">
+          <div
+            class="flex justify-center items-center w-10 h-10 bg-delprimaryLight text-white group-hover:bg-whiteLight group-hover:text-delprimaryDark group-hover:translate-x-[7.7rem] origin-right duration-500 ease-in-out z-10 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+            </svg>
+          </div>
+          <span class="group-hover:-translate-x-[3.3rem] origin-left duration-500 ease-in-out"
+            x-text="showMore ? 'Show Less' : 'Show More'">Show More</span>
+        </button>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="client_Sec" class="section_container">
+    <div
+      class="bg-client lg:pt-[120px] py-16 lg:pb-[135px] bg-no-repeat bg-center bg-[length:105%_111%] font-maven text-delprimaryText 4xl:px-[8.5%] px-[3.5%] rounded-3xl shadow-[0px_0px_24px_0px_#33333333]">
+      <div class="mx-auto text-center lg:w-1/2">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl xl:leading-[56.4px] font-bold mb-6">Our client satisfaction </h2>
+        <p class="text-xl font-medium text-delprimarySecondary">We have several powerful plans to showcase your business
+          and get discovered as a creative entrepreneurs. Everything you need.</p>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper clientSlider pt-[100px] swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <div class="swiper-wrapper " id="swiper-wrapper-38a3247031104d8a9" aria-live="polite">
+          <div class="swiper-slide swiper-slide-active" style="width: 362.333px; margin-right: 32px;" role="group"
+            aria-label="1 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide swiper-slide-next" style="width: 362.333px; margin-right: 32px;" role="group"
+            aria-label="2 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide" style="width: 362.333px; margin-right: 32px;" role="group" aria-label="3 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide" style="width: 362.333px; margin-right: 32px;" role="group" aria-label="4 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide" style="width: 362.333px; margin-right: 32px;" role="group" aria-label="5 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide" style="width: 362.333px; margin-right: 32px;" role="group" aria-label="6 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide" style="width: 362.333px; margin-right: 32px;" role="group" aria-label="7 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide" style="width: 362.333px; margin-right: 32px;" role="group" aria-label="8 / 8">
+            <div class="card duration-700 ease-in-out shadow-[0px_0px_8px_0px_#1010101F] bg-white p-6 rounded-3xl">
+              <h2 class="mb-2 font-bold text-2xll">Multi Yard</h2>
+              <p class="text-base leading-relaxed">The Mansion - An exclusive and ultra-luxurious hotel-within-a-hotel,
+                featuring spacious and opulent </p>
+              <p class="text-base leading-relaxed">Brad Garrett's Comedy Club - A premier stand-up comedy club featuring
+                top comedians from around the </p>
+              <div class="mt-[84px]">
+                <a class="flex items-center"><img alt="testimonial" src="asset/img/clint-1.png"
+                    class="w-[60px] h-[60px] rounded-full flex-shrink-0 object-cover object-center"><span
+                    class="flex flex-col flex-grow pl-4"><span class="text-xl text-[#585858] font-semibold">Marvin
+                      McKinney</span><span class="text-[#585858] text-base">Manager at Make Hub</span></span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          class="swiper-pagination lg:!w-[36%] !w-1/2 mx-auto bg-white !h-3 overflow-hidden rounded-full mt-[60px] swiper-pagination-progressbar swiper-pagination-horizontal"
+          style="position: initial !important"><span class="swiper-pagination-progressbar-fill"
+            style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 300ms;"></span>
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="font-maven text-delprimaryText 4xl:px-[11%] 2xl:px-[5%] lg:pt-[220px] py-16 lg:pb-[120px]">
+    <div class="section_container">
+      <div class="flex flex-col items-center gap-3 2xl:flex-row">
+        <div class="2xl:w-[31%] lg:w-2/5 mx-auto 2xl:text-left text-center">
+          <h2 class="xl:text-5xl sm:text-4xl text-2xl xl:leading-[56.4px] font-bold mb-6">All the brands that use our
+            service </h2>
+          <p class="text-xl font-medium text-delprimarySecondary">Customers who use Landify UI Kit to build their new
+            startup landing page.</p>
+        </div>
+
+        <div class="2xl:w-[69%] flex flex-wrap gap-5 2xl:mt-0 mt-8">
+          <div class="flex flex-wrap justify-end w-full gap-5">
+            <img alt="testimonial" src="asset/img/FedEx-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/Airbnb-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/Amazon-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/FedEx-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/Microsoft-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+          </div>
+
+          <div class="flex flex-wrap w-full gap-5">
+            <img alt="testimonial" src="asset/img/Google-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/OLA-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/Google-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/Walmart-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+            <img alt="testimonial" src="asset/img/OYO-Logo.png" class="lg:w-40 sm:w-56  w-[47%] h-[90px]">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="pacKages"
+    class="bg-neutralArtBoard font-maven text-primaryText lg:pt-[120px] py-16 lg:pb-[201px] 4xl:px-[8.5%] 2xl:px-[3.5%]">
+    <div class="section_container ">
+      <div class="lg:w-1/2 mx-auto text-center">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl  xl:leading-[56.4px] font-bold mb-6">The Right Plan for Your
+          Business</h2>
+        <p class="text-primarySecondary text-xl font-medium">We have several powerful plans to showcase your business
+          and get discovered as a creative entrepreneurs. Everything you need.</p>
+      </div>
+      <div x-data="{ yearly: false }">
+        <div class="flex flex-col items-center space-x-2 justify-center mb-9 mt-[60px]">
+          <h4 class="text-primaryLight text-base font-medium mb-4">Save 15% on yearly plan!</h4>
+          <div class="border border-[#CFCFCF] rounded-full p-2">
+            <button
+              class="px-4 py-2 rounded-full text-base font-medium focus:outline-none transition-colors duration-300"
+              :class="{ 'bg-primaryLight text-white': !yearly }" @click="yearly = false">
+              Monthly
+            </button>
+            <button
+              class="px-4 py-2 rounded-full text-base font-medium focus:outline-none transition-colors duration-300"
+              :class="{ 'bg-primaryLight text-white ': yearly }" @click="yearly = true">
+              Yearly
+            </button>
+          </div>
+        </div>
+
+        <!-- Your content to toggle between monthly and yearly views -->
+        <div x-show="!yearly" class="mt-4">
+          <!-- Monthly content -->
+          <div class="price-item grid md:grid-cols-2 lg:grid-cols-3 gap-9 mt-20">
+            <div
+              class="price-list group hover:border-2 hover:bg-white hover:border-primaryDarkest transition-all duration-300 ease-in-out hover:-translate-y-6 rounded-3xl p-7 relative  shadow-[0px_0px_4px_0px_#33333329] self-start">
+
+              <h2 class="price-list-title font-bold text-2xl">Free</h2>
+              <h1
+                class="xl:text-5xl text-4xl  leading-none font-bold flex items-center gap-2 pb-4 mb-4 mt-8 border-b border-[#878787]">
+                <span>$0.00</span><span class="text-lg ml-1 font-semibold self-end">/month</span></h1>
+              <p class="leading-relaxed text-base primarySecondary">For those who want to try our services with no
+                commitment</p>
+              <a class="border group-hover:bg-primaryDark group-hover:hover:border-primaryDark border-primaryLight font-semibold text-base leading-8 text-primaryLight group-hover:hover:text-whiteLight flex justify-center items-center gap-6 p-2 pr-6 rounded-full my-8"
+                href="#">
+                <div
+                  class="flex justify-center items-center w-10 h-10 bg-primaryLight text-white group-hover:bg-whiteLight group-hover:text-primaryDark group-hover:translate-x-[11rem] origin-right duration-500 ease-in-out z-10 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                  </svg>
+                </div>
+                <span
+                  class="group-hover:-translate-x-[3.3rem] group-hover:text-whiteLight origin-left duration-500 ease-in-out">Get
+                  started for free</span>
+              </a>
+              <h3 class="text-xl font-semibold mb-4">Main Feature Services</h3>
+              <ul class="space-y-3 text-neutralTextLight">
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    <span class="text-base">Full Featured DMS</span>
+                  </label>
+
+
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Full Featured DMS - <span class="font-medium">$100.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+
+                </li>
+                <li>
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Single Dealership - <span class="font-medium">$150.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked="">
+                    <span class="text-base">Advanced Statistics</span>
+                  </label>
+                </li>
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Exclusive Deals<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Advance Statistics<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div
+              class="price-list group hover:border-2 hover:bg-white hover:border-primaryDarkest transition-all duration-300 ease-in-out hover:-translate-y-6 rounded-3xl p-7 relative  shadow-[0px_0px_4px_0px_#33333329] self-start">
+
+              <h2 class="price-list-title font-bold text-2xl">Business Plan</h2>
+              <h1
+                class="xl:text-5xl text-4xl  leading-none font-bold flex items-center gap-2 pb-4 mb-4 mt-8 border-b border-[#878787]">
+                <span>$199.00</span><span class="text-lg ml-1 font-semibold self-end">/month</span></h1>
+              <p class="leading-relaxed text-base primarySecondary">For those who want to try our services with no
+                commitment</p>
+              <a class="border group-hover:bg-primaryDark group-hover:hover:border-primaryDark border-primaryLight font-semibold text-base leading-8 text-primaryLight group-hover:hover:text-whiteLight flex justify-center items-center gap-6 p-2 pr-6 rounded-full my-8"
+                href="#">
+                <div
+                  class="flex justify-center items-center w-10 h-10 bg-primaryLight text-white group-hover:bg-whiteLight group-hover:text-primaryDark group-hover:translate-x-32 origin-right duration-500 ease-in-out z-10 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                  </svg>
+                </div>
+                <span
+                  class="group-hover:-translate-x-[3.3rem] group-hover:text-whiteLight origin-left duration-500 ease-in-out">Buy
+                  this plan</span>
+              </a>
+              <h3 class="text-xl font-semibold mb-4">Main Feature Services</h3>
+              <ul class="space-y-3 text-neutralTextLight">
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    <span class="text-base">Full Featured DMS</span>
+                  </label>
+
+
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Full Featured DMS - <span class="font-medium">$100.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Single Dealership - <span class="font-medium">$150.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked="">
+                    <span class="text-base">Advanced Statistics</span>
+                  </label>
+                </li>
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Exclusive Deals<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Advance Statistics<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+              </ul>
+              <div class="flex justify-center mt-8">
+                <div x-data="{ isOpen: false, openedWithKeyboard: false }"
+                  class="relative w-full flex flex-wrap justify-center"
+                  @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
+                  <!-- Toggle Button -->
+                  <button type="button" @click="isOpen = ! isOpen"
+                    class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap r px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:focus-visible:outline-slate-300"
+                    aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true"
+                    @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true"
+                    :class="isOpen || openedWithKeyboard ? 'text-black dark:text-white' : 'text-slate-700 dark:text-slate-300'"
+                    :aria-expanded="isOpen || openedWithKeyboard">
+                    Extra Services
+                    <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" class="size-4 rotate-0">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+                  <!-- Dropdown Menu -->
+                  <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard"
+                    @click.outside="isOpen = false, openedWithKeyboard = false"
+                    @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
+                    class="flex w-full  flex-col overflow-hiddenpy-1.5 dark:border-slate-700 dark:bg-slate-800"
+                    role="menu">
+                    <h3 class="text-xl font-semibold mb-4">Add Extra Services</h3>
+                    <div class="flex flex-col gap-3">
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6"
+                        for="services">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service One</h4>
+                          </div>
+                          <input type="checkbox" name="" value="services" id="services"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$20.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6"
+                        for="services2">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Two</h4>
+                          </div>
+                          <input type="checkbox" name="" value="services2" id="services2"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$10.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6"
+                        for="services3">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Three</h4>
+                          </div>
+                          <input type="checkbox" name="" value="services3" id="services3"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$15.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+            <div
+              class="price-list group hover:border-2 hover:bg-white hover:border-primaryDarkest transition-all duration-300 ease-in-out hover:-translate-y-6 rounded-3xl p-7 relative  shadow-[0px_0px_4px_0px_#33333329] self-start">
+
+              <h2 class="price-list-title font-bold text-2xl">Enterprise</h2>
+              <h1
+                class="xl:text-5xl text-4xl  leading-none font-bold flex items-center gap-2 pb-4 mb-4 mt-8 border-b border-[#878787]">
+                <span>Custom</span></h1>
+              <p class="leading-relaxed text-base primarySecondary">For those who want to try our services with no
+                commitment</p>
+              <a class="border group-hover:bg-primaryDark group-hover:hover:border-primaryDark border-primaryLight font-semibold text-base leading-8 text-primaryLight group-hover:hover:text-whiteLight flex justify-center items-center gap-6 p-2 pr-6 rounded-full my-8"
+                href="#">
+                <div
+                  class="flex justify-center items-center w-10 h-10 bg-primaryLight text-white group-hover:bg-whiteLight group-hover:text-primaryDark group-hover:translate-x-32 origin-right duration-500 ease-in-out z-10 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                  </svg>
+                </div>
+                <span
+                  class="group-hover:-translate-x-[3.3rem] group-hover:text-whiteLight origin-left duration-500 ease-in-out">Talk
+                  to sales</span>
+              </a>
+              <h3 class="text-xl font-semibold mb-4">Main Feature Services</h3>
+              <ul class="space-y-3 text-neutralTextLight">
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    <span class="text-base">Full Featured DMS</span>
+                  </label>
+
+
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Full Featured DMS - <span class="font-medium">$100.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Single Dealership - <span class="font-medium">$150.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked="">
+                    <span class="text-base">Advanced Statistics</span>
+                  </label>
+                </li>
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Exclusive Deals<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Advance Statistics<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+              </ul>
+              <div class="flex justify-center mt-8">
+                <div x-data="{ isOpen: false, openedWithKeyboard: false }"
+                  class="relative w-full flex flex-wrap justify-center"
+                  @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
+                  <!-- Toggle Button -->
+                  <button type="button" @click="isOpen = ! isOpen"
+                    class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap r px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:focus-visible:outline-slate-300 text-black dark:text-white"
+                    aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true"
+                    @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true"
+                    :class="isOpen || openedWithKeyboard ? 'text-black dark:text-white' : 'text-slate-700 dark:text-slate-300'"
+                    :aria-expanded="isOpen || openedWithKeyboard" aria-expanded="true">
+                    Extra Services
+                    <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" class="size-4 rotate-0">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                  </button>
+                  <!-- Dropdown Menu -->
+                  <div x-show="isOpen || openedWithKeyboard" x-transition="" x-trap="openedWithKeyboard"
+                    @click.outside="isOpen = false, openedWithKeyboard = false"
+                    @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
+                    class="flex w-full  flex-col overflow-hiddenpy-1.5 dark:border-slate-700 dark:bg-slate-800"
+                    role="menu">
+                    <h3 class="text-xl font-semibold mb-4">Add Extra Services</h3>
+                    <div class="flex flex-col gap-3">
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6 cursor-pointer"
+                        for="cus2serv">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service One</h4>
+                          </div>
+                          <input type="checkbox" name="" value="cus2serv" id="cus2serv"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$20.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6 cursor-pointer"
+                        for="cus2serv2">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Two</h4>
+                          </div>
+                          <input type="checkbox" name="" value="cus2serv2" id="cus2serv2"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$10.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6 cursor-pointer"
+                        for="cus2serv3">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Three</h4>
+                          </div>
+                          <input type="checkbox" name="" value="cus2serv3" id="cus2serv3"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$15.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div x-show="yearly" class="mt-4">
+          <!-- Yearly content -->
+          <div class="price-item grid md:grid-cols-2 lg:grid-cols-3 gap-9 mt-20">
+            <div
+              class="price-list group hover:border-2 hover:bg-white hover:border-primaryDarkest transition-all duration-300 ease-in-out hover:-translate-y-6 rounded-3xl p-7 relative  shadow-[0px_0px_4px_0px_#33333329] self-start">
+
+              <h2 class="price-list-title font-bold text-2xl">Free</h2>
+              <h1
+                class="xl:text-5xl text-4xl  leading-none font-bold flex items-center gap-2 pb-4 mb-4 mt-8 border-b border-[#878787]">
+                <span>$0.00</span><span class="text-lg ml-1 font-semibold self-end">/year</span></h1>
+              <p class="leading-relaxed text-base primarySecondary">For those who want to try our services with no
+                commitment</p>
+              <a class="border group-hover:bg-primaryDark group-hover:hover:border-primaryDark border-primaryLight font-semibold text-base leading-8 text-primaryLight group-hover:hover:text-whiteLight flex justify-center items-center gap-6 p-2 pr-6 rounded-full my-8"
+                href="#">
+                <div
+                  class="flex justify-center items-center w-10 h-10 bg-primaryLight text-white group-hover:bg-whiteLight group-hover:text-primaryDark group-hover:translate-x-[11rem] origin-right duration-500 ease-in-out z-10 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                  </svg>
+                </div>
+                <span
+                  class="group-hover:-translate-x-[3.3rem] group-hover:text-whiteLight origin-left duration-500 ease-in-out">Get
+                  started for free</span>
+              </a>
+              <h3 class="text-xl font-semibold mb-4">Main Feature Services</h3>
+              <ul class="space-y-3 text-neutralTextLight">
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    <span class="text-base">Full Featured DMS</span>
+                  </label>
+
+
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Full Featured DMS - <span class="font-medium">$100.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white text-neutralTextLight">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="border-neutralTextLight rounded-md bg-primaryDark text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Single Dealership - <span class="font-medium">$150.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white text-neutralTextLight">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="border-neutralTextLight rounded-md bg-primaryDark text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked="">
+                    <span class="text-base">Advanced Statistics</span>
+                  </label>
+                </li>
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Exclusive Deals<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Advance Statistics<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div
+              class="price-list group hover:border-2 hover:bg-white hover:border-primaryDarkest transition-all duration-300 ease-in-out hover:-translate-y-6 rounded-3xl p-7 relative  shadow-[0px_0px_4px_0px_#33333329] self-start">
+
+              <h2 class="price-list-title font-bold text-2xl">Business Plan</h2>
+              <h1
+                class="xl:text-5xl text-4xl  leading-none font-bold flex items-center gap-2 pb-4 mb-4 mt-8 border-b border-[#878787]">
+                <span>$1000.00</span><span class="text-lg ml-1 font-semibold self-end">/year</span></h1>
+              <p class="leading-relaxed text-base primarySecondary">For those who want to try our services with no
+                commitment</p>
+              <a class="border group-hover:bg-primaryDark group-hover:hover:border-primaryDark border-primaryLight font-semibold text-base leading-8 text-primaryLight group-hover:hover:text-whiteLight flex justify-center items-center gap-6 p-2 pr-6 rounded-full my-8"
+                href="#">
+                <div
+                  class="flex justify-center items-center w-10 h-10 bg-primaryLight text-white group-hover:bg-whiteLight group-hover:text-primaryDark group-hover:translate-x-32 origin-right duration-500 ease-in-out z-10 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                  </svg>
+                </div>
+                <span
+                  class="group-hover:-translate-x-[3.3rem] group-hover:text-whiteLight origin-left duration-500 ease-in-out">Buy
+                  this plan</span>
+              </a>
+              <h3 class="text-xl font-semibold mb-4">Main Feature Services</h3>
+              <ul class="space-y-3 text-neutralTextLight">
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    <span class="text-base">Full Featured DMS</span>
+                  </label>
+
+
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Full Featured DMS - <span class="font-medium">$100.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white text-neutralTextLight">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="border-neutralTextLight rounded-md bg-primaryDark text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Single Dealership - <span class="font-medium">$150.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white text-neutralTextLight">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="border-neutralTextLight rounded-md bg-primaryDark text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked="">
+                    <span class="text-base">Advanced Statistics</span>
+                  </label>
+                </li>
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Exclusive Deals<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Advance Statistics<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+              </ul>
+              <div class="flex justify-center mt-8">
+                <div x-data="{ isOpen: false, openedWithKeyboard: false }"
+                  class="relative w-full flex flex-wrap justify-center"
+                  @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
+                  <!-- Toggle Button -->
+                  <button type="button" @click="isOpen = ! isOpen"
+                    class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap r px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:focus-visible:outline-slate-300 text-black dark:text-white"
+                    aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true"
+                    @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true"
+                    :class="isOpen || openedWithKeyboard ? 'text-black dark:text-white' : 'text-slate-700 dark:text-slate-300'"
+                    :aria-expanded="isOpen || openedWithKeyboard" aria-expanded="true">
+                    Extra Services
+                    <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" class="size-4 rotate-0">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                  </button>
+                  <!-- Dropdown Menu -->
+                  <div x-show="isOpen || openedWithKeyboard" x-transition="" x-trap="openedWithKeyboard"
+                    @click.outside="isOpen = false, openedWithKeyboard = false"
+                    @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
+                    class="flex w-full  flex-col overflow-hiddenpy-1.5 dark:border-slate-700 dark:bg-slate-800"
+                    role="menu">
+                    <h3 class="text-xl font-semibold mb-4">Add Extra Services</h3>
+                    <div class="flex flex-col gap-3">
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6"
+                        for="busservices">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service One</h4>
+                          </div>
+                          <input type="checkbox" name="" value="busservices" id="busservices"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$20.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6"
+                        for="busservices2">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Two</h4>
+                          </div>
+                          <input type="checkbox" name="" value="busservices2" id="busservices2"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$10.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6"
+                        for="busservices3">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Three</h4>
+                          </div>
+                          <input type="checkbox" name="" value="busservices3" id="busservices3"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$15.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+            <div
+              class="price-list group hover:border-2 hover:bg-white hover:border-primaryDarkest transition-all duration-300 ease-in-out hover:-translate-y-6 rounded-3xl p-7 relative  shadow-[0px_0px_4px_0px_#33333329] self-start">
+
+              <h2 class="price-list-title font-bold text-2xl">Enterprise</h2>
+              <h1
+                class="xl:text-5xl text-4xl  leading-none font-bold flex items-center gap-2 pb-4 mb-4 mt-8 border-b border-[#878787]">
+                <span>Custom</span></h1>
+              <p class="leading-relaxed text-base primarySecondary">For those who want to try our services with no
+                commitment</p>
+              <a class="border group-hover:bg-primaryDark group-hover:hover:border-primaryDark border-primaryLight font-semibold text-base leading-8 text-primaryLight group-hover:hover:text-whiteLight flex justify-center items-center gap-6 p-2 pr-6 rounded-full my-8"
+                href="#">
+                <div
+                  class="flex justify-center items-center w-10 h-10 bg-primaryLight text-white group-hover:bg-whiteLight group-hover:text-primaryDark group-hover:translate-x-32 origin-right duration-500 ease-in-out z-10 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                  </svg>
+                </div>
+                <span
+                  class="group-hover:-translate-x-[3.3rem] group-hover:text-whiteLight origin-left duration-500 ease-in-out">Talk
+                  to sales</span>
+              </a>
+              <h3 class="text-xl font-semibold mb-4">Main Feature Services</h3>
+              <ul class="space-y-3 text-neutralTextLight">
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    <span class="text-base">Full Featured DMS</span>
+                  </label>
+
+
+
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Full Featured DMS - <span class="font-medium">$100.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between gap-2 text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked>
+                    Single Dealership - <span class="font-medium">$150.00</span>
+                  </label>
+                  <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                    <button @click="count--"
+                      :class="{ 'bg-primaryDark text-white border-neutralTextLight rounded-md': count > 0, 'bg-white text-neutralTextLight': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                    </button>
+                    <input type="number" x-model="count"
+                      class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark" />
+                    <button @click="count++"
+                      :class="{ 'bg-white text-neutralTextLight': count > 0, 'bg-primaryDark text-white': count === 0 }"
+                      class="bg-white border-neutralTextLight rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 p-1 border border-neutralTextLight rounded-md">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+                <li class="flex items-center justify-between text-base font-normal">
+                  <label class="space-x-2" for="">
+                    <input type="checkbox" class="accent-neutralTextLight" checked="">
+                    <span class="text-base">Advanced Statistics</span>
+                  </label>
+                </li>
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Exclusive Deals<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    Advance Statistics<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+                <li class="flex items-center gap-2 text-base font-normal">
+                  <label class="space-x-2" for="che10">
+                    <input id="che10" class="w-4 h-4 rounded" type="checkbox" value="">
+                    1 Stock Car<span class="font-medium">$100.00</span>
+                  </label>
+                </li>
+
+              </ul>
+              <div class="flex justify-center mt-8">
+                <div x-data="{ isOpen: false, openedWithKeyboard: false }"
+                  class="relative w-full flex flex-wrap justify-center"
+                  @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
+                  <!-- Toggle Button -->
+                  <button type="button" @click="isOpen = ! isOpen"
+                    class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap r px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:focus-visible:outline-slate-300 text-black dark:text-white"
+                    aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true"
+                    @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true"
+                    :class="isOpen || openedWithKeyboard ? 'text-black dark:text-white' : 'text-slate-700 dark:text-slate-300'"
+                    :aria-expanded="isOpen || openedWithKeyboard" aria-expanded="true">
+                    Extra Services
+                    <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" class="size-4 rotate-0">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                  </button>
+                  <!-- Dropdown Menu -->
+                  <div x-show="isOpen || openedWithKeyboard" x-transition="" x-trap="openedWithKeyboard"
+                    @click.outside="isOpen = false, openedWithKeyboard = false"
+                    @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
+                    class="flex w-full  flex-col overflow-hiddenpy-1.5 dark:border-slate-700 dark:bg-slate-800"
+                    role="menu">
+                    <h3 class="text-xl font-semibold mb-4">Add Extra Services</h3>
+                    <div class="flex flex-col gap-3">
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6 cursor-pointer"
+                        for="cusservices">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service One</h4>
+                          </div>
+                          <input type="checkbox" name="" value="cusservices" id="cusservices"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$20.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6 cursor-pointer"
+                        for="cusservices2">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Two</h4>
+                          </div>
+                          <input type="checkbox" name="" value="cusservices2" id="cusservices2"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$10.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label
+                        class="text-neutralText flex flex-col justify-between bg-neutralArtBoard p-6 fill-neutralTextLight has-[:checked]:fill-primaryDark rounded-xl border border-secondGrey gap-6 cursor-pointer"
+                        for="cusservices3">
+                        <div class="flex justify-between gap-6 relative">
+                          <div class="space-y-2">
+                            <h4 class="text-base text-neutralTextLight font-medium">Extra Service Three</h4>
+                          </div>
+                          <input type="checkbox" name="" value="cusservices3" id="cusservices3"
+                            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-thirdGrey bg-transparent checked:border-primaryDark checked:bg-primaryDark">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4 absolute text-white transition-opacity opacity-0 pointer-events-none top-3 -right-1 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                          </svg>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                          <label class="text-neutralText font-bold">$15.00</label>
+                          <div x-data="{ count: 0 }" class="flex items-center justify-center">
+                            <button @click="count--"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path>
+                              </svg>
+                            </button>
+                            <input type="number" x-model="count"
+                              class="h-[30px] w-[60px] text-center py-1 rounded mx-2 text-neutralTextLight border border-[#D9D9D9] checked:border-primaryDark">
+                            <button @click="count++"
+                              class="border border-neutralTextLight rounded-md text-neutralTextLight">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 p-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </label>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- end Form pricing table Section  -->
+  <section class="bg-brandBg bg-delprimaryLight  bg-no-repeat bg-center bg-cover font-maven text-white py-[60px]">
+    <div class="section_container">
+      <div class="text-center sm:px-16">
+        <h2 class="xl:text-5xl sm:text-4xl text-2xl xl:leading-[56.4px] font-bold mb-6">Get started today </h2>
+        <p class="text-lg font-medium sm:text-xl">Take Control of Your Business.Centralize your inventory management and
+          boost productivity. Streamline your operations and maximise efficiency with our comprehensive solutions
+          designed to meet the needs of modern businesses.</p>
+        <div class="flex justify-center mt-[60px]">
+          <a href="register"
+            class="flex items-center gap-6 p-2 pr-6 text-base font-semibold leading-8 bg-white border rounded-full group text-delprimaryLight">
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-delprimaryLight text-white   group-hover:translate-x-[7.7rem] origin-right duration-500 ease-in-out z-10 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+              </svg>
+            </div>
+            <span class="group-hover:-translate-x-[3.3rem] origin-left duration-500 ease-in-out">Get started</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <!-- Footer Menu  -->
+    <div class="footer-menu bg-footerBg bg-no-repeat bg-center bg-cover font-maven text-delprimaryText pt-15 pb-20">
+      <div class="section_container">
+        <div class="footer_content flex lg:flex-row flex-col justify-between items-start gap-5 lg:gap-10">
+          <!-- Footer Item  -->
+          <div class="footer-item w-full md:w-1/2 lg:w-2/6 mb-8">
+            <h1 class="max-w-[100px] sm:max-w-[150px]">
+              <a href="http://carsaroundsolutions.test" class="inline-block">
+                <img src="asset/img/blue_logo.png" "="" alt=" logo" class="w-full">
+              </a>
+            </h1>
+            <p class="font-base font-medium mt-8 max-w-md">
+              Carsaround is not just any dealership management software. It’s unique and state-of-the-art technology
+              integration coupled with progressive cloud-based solutions will be sure to make you realize the
+              difference.
+            </p>
+          </div>
+          <div class="w-full lg:w-4/6 flex sm:flex-row flex-col items-start gap-5 lg:gap-8 space-y-5 sm:space-y-0">
+            <!-- Footer Item  -->
+            <div class="footer-item w-full 2xl:w-1/3 sm:w-[30%]">
+              <h2 class="footer-link-title lg:text-xl md:text-sm text-xs font-bold text-bannerText">Useful links</h2>
+              <ul class="lg:mt-5 mt-2 md:mt-0">
+                <li class="mt-1"><a
+                    class="lg:leading-7 lg:text-base text-xs leading-[18px] font-medium hover:opacity-70"
+                    href="privacy-policy">Privacy Policy</a></li>
+                <li class="mt-1"><a
+                    class="lg:leading-7 lg:text-base text-xs leading-[18px] font-medium hover:opacity-70"
+                    href="terms-conditions">Terms and Conditions</a></li>
+              </ul>
+            </div>
+            <!-- Footer Item  -->
+            <div class="footer-item w-full 2xl:w-1/3 sm:w-[30%]">
+              <h2 class="footer-support-title lg:text-xl md:text-sm text-xs font-bold text-bannerText">Pages</h2>
+              <ul class="lg:mt-5 mt-2 md:mt-0">
+                <!-- <li class="mt-1"><a class="lg:text-xl text-xs font-normal hover:opacity-70" href="#">Forum</a></li> -->
+                <li class="mt-1"><a
+                    class="lg:text-base lg:leading-7 text-xs leading-[18px] font-medium hover:opacity-70" href="#">about
+                    us</a></li>
+                <li class="mt-1"><a
+                    class="lg:text-base lg:leading-7 text-xs leading-[18px] font-medium hover:opacity-70"
+                    href="#">Features</a></li>
+
+                <li class="mt-1"><a
+                    class="lg:text-base lg:leading-7 text-xs leading-[18px] font-medium hover:opacity-70"
+                    href="#">Packages</a></li>
+                <li class="mt-1"><a
+                    class="lg:text-base lg:leading-7 text-xs leading-[18px] font-medium hover:opacity-70"
+                    href="#">Testimonials</a></li>
+
+              </ul>
+            </div>
+            <!-- Footer Item  -->
+            <div class="footer-item w-full 2xl:w-1/3 sm:w-3/5">
+              <h2 class="footer-get-title lg:text-xl text-xs md:text-sm font-bold text-bannerText">Get in Touch</h2>
+              <ul class="lg:mt-5 mt-3 md:mt-2">
+                <li>
+                  <a class="inline-flex justify-start items-center gap-4 hover:opacity-70"
+                    href="mailto:ratib@Dealercore.com.au">
+                    <img src="asset/img/mailIcon.png" alt="mail-image">
+                    <span class="lg:text-base lg:leading-7 text-xs font-normal ">sales@carsaround.com.au</span>
+                  </a>
+                </li>
+                <li class="mt-2">
+                  <a class="inline-flex justify-start items-center gap-5 hover:opacity-70" href="tel:1800 010 001">
+                    <img class="mt-1" src="asset/img/phoneIcon.png" alt="location-image">
+                    <span class="lg:text-base lg:leading-7 text-xs font-normal">1800 010 001 or 1800 125 258</span>
+                  </a>
+                </li>
+                <li class="mt-2">
+                  <a class="inline-flex justify-start items-start gap-5 hover:opacity-70"
+                    href="https://goo.gl/maps/sbLt5am1siBPZGA97">
+                    <img class="mt-1" src="asset/img/locationIcon.png" alt="location-image">
+                    <span class="lg:text-base lg:leading-7 text-xs leading-[18px] font-medium ">1327/401 docklands
+                      drive, docklands Melbourne Vic 3008</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Copyright  -->
+    <div class="footer-copyright bg-delprimaryLight font-maven text-whiteLight  py-3.5 lg:py-6">
+      <div class="section_container">
+        <div class="flex sm:flex-nowrap flex-wrap justify-between item-center sm:gap-0 gap-4">
+          <p class="lg:text-base text-xs font-medium">Copyright © 2024. Template has been designed by <a
+              href="font-bold">Make Hub</a></p>
+          <p class="lg:text-base text-xs font-medium">ABN-2548653</p>
+          <div class="flex  justiry-end items-center gap-2">
+            <a class="font-light lg:text-sm text-[8px] hover:opacity-70" href="terms-conditions">Terms of Conditions
+            </a>
+            <span class="w-px h-4 bg-black"></span>
+            <a class="font-light lg:text-sm text-[8px] hover:opacity-70" href="privacy-policy">Privacy &amp; Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- js file add  -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+
+  <script src="asset/js/script.js" defer></script>
+</body>
+
+</html>

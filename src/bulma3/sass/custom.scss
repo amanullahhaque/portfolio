@@ -1,0 +1,525 @@
+// <<==== additional style start ======>>
+body{
+    font-family: "Open Sans", sans-serif;
+}
+.available_bg{
+    background-color: #0D7390;
+}
+.attended_bg{
+    background-color: #4C6F2A;
+}
+.did_not_att_bg{
+    background-color: #B1B1B1;
+}
+.confirm_bg{
+    background-color: #99CC66;
+}
+.provisional_bg{
+    background-color: #EF8114;
+}
+.-mr-3 {
+	margin-right: -49px;
+	margin-left: 49px;
+}
+.-mr-1 {
+	margin-right: -25px;
+	margin-left: 25px;
+}
+.pos-1{
+    top: 15px !important;
+}
+.-mb-1 {
+	position: relative;
+	bottom: -2px;
+}
+.overflow-hidden{
+    overflow-y: auto;
+}
+.overflow-x-auto{
+    overflow-y: auto;
+}
+.date-info {
+	font-size: 12px;
+	color: #ffffff;
+}
+.atten-info {
+	color: #fff;
+	line-height: 17px;
+}
+.das-px{padding: 37px 125px;}
+.border-b{
+    border-bottom: 1px solid #CCCCCC;
+}
+.close_btn{
+    display: none;
+}
+.dashboard-sub-title{
+    font-size: 28px;
+}
+.dashboard-main-title{
+    font-size: 36px;
+}
+.open-btn{
+    display: none;
+}
+
+.dashboard_wrapper {
+	display: flex;
+    // <<<================== sidebar section style ==================>>>
+    .sidebar {
+        width: 13.9%;
+    }
+    .menu{
+        width: 13.9%;
+        height: 100%;
+        background-color: #0D708E;
+        position: fixed;
+        top: 0;
+        padding: 60px 20px;
+        .control{
+            margin-bottom: 20px;
+            input{
+                &::placeholder{
+                    color: #000;
+                    font-weight: 600;
+                }
+            }
+        }
+        .nav{
+            li{
+                a{
+                    color: #ffffff;
+                    display: block;
+                    padding: 10px 20px;
+                    
+                    i{
+                        margin-right: 10px;
+                    }
+                    &:hover{
+                        background-color: #ffffff;
+                        color: #0D708E;
+                    }
+                }
+                .is-active{
+                    background-color: #ffffff;
+                        color: #0D708E;
+                }
+            }
+            .dropdown{
+                display: block;
+                .dropdown-content{
+                    a{
+                        color: #000;
+                    }
+                }
+                a{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    .main{
+        width: 86.1%;
+        .header_wraper{
+            height: 155px;
+        }
+        .navbar{
+            width: 86.1%;
+            right: 0;
+            left: initial;
+            border-bottom: 1px solid #CCCCCC;
+            .navbar-item{
+                font-size: 14px;
+                gap: 14px;
+              .logo {
+                    max-height: initial;
+                    width: 240px;
+                    height: 107px;
+                }
+                .logoutIcon{
+                    width: 43px;
+                    height: 43px;
+                    max-height: initial;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .dashboard_body {
+            padding: 10px 125px;
+            
+            .tableScroll.is-fullwidth.overflow-hidden {
+                padding-bottom: 29px;
+            }
+            .tile {
+                flex-basis: initial;
+                flex-grow: initial;
+                .subtitle{
+                    font-size: 28px;
+                    color: #666666;
+                }
+                .title{
+                    font-size: 88px;
+                    color: #D3D3D3;
+                }
+                .is-active{
+                    color: #99CC66 ;
+                }
+            }
+            // <<<================== dashboart section style ==================>>>
+            .taskSec{
+                
+                table{
+                    border-collapse: separate;
+                    border-spacing: 0 15px;
+                    
+                    thead{
+                        tr{
+                            position: relative;
+                            
+                        }
+                        th{
+                            color: #666666;
+                            font-weight: 400;
+                            border: none;
+                            padding: 12px 30px;
+                            
+                            
+                        }
+                  }
+                  tbody{
+                    tr{
+                        position: relative;
+                       
+                    }
+                
+                    td{
+                        color: #666666;
+                        border: none;
+                        border-top: 1px solid #dbdbdb;
+                        border-bottom: 1px solid #dbdbdb;
+                        padding: 19px 30px;
+                        position: relative;
+                        span{
+                            border-left: 10px solid red;
+                        }
+                        .button.is-white.p-0 {
+                            position: absolute;
+                            right: 12px;
+                            top: 0;
+                            height: 100%;
+                        }
+                       
+                        .task_des{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding-right: 50px;
+                            i{
+                                border: 1px solid #000000;
+                                border-radius: 50%;
+                                padding: 10px;
+                            }
+                        }
+                    }
+                    td:first-child {
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        overflow: hidden;
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 13px;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background: #FF0000;
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
+                    }
+                    tr:nth-child(2) td:first-child {
+                        &::before{
+                            background: #EF8114;
+                        }
+                    }
+                    tr:nth-child(3) td:first-child {
+                        &::before{
+                            background: #99CC66;
+                        }
+                    }
+                    td:last-child {
+                        border-right: 1px solid #dbdbdb;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        overflow: hidden;
+                    }
+                  }
+                }
+             
+
+            }
+            .appointment_sec{
+                table{
+                    th{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #666666;
+                        border: 1px solid #CCCCCC;
+                        border-top: none;
+                        
+                        .apoint-timing{
+                          
+                        }
+                    }
+                    td{
+                        color: #666666;
+                        color: #ffffff;
+                        border: 1px solid #CCCCCC;
+                        border-top: none;
+                        border-bottom: none;
+                        padding: 0;
+                        .apointment_details{
+                            padding: 8px 8px 12px;
+                            width: 99px;
+                            position: relative;
+                            z-index: 20;
+                            .client-info {
+                                text-align: left;
+                              
+                            }
+                            .check-icon{
+                                width: 25.12px;
+                                height: 25.12px;
+                                border-radius: 50%;
+                                border: 1px solid #131313;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-bottom: -26px;
+                                background: white;
+                                color: black;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            // <<<================== calenar section style ==================>>>
+            .calendar_sec{
+                
+                .calender_sec_wrapper {
+                    width: 80%;
+                    .calender_header_title{
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+                .calendar_key{
+                    padding-top: 100px;
+                    width: 20%;
+                    ul{
+                        li{
+                            display: flex;
+                            gap: 15px;
+                            align-items: center;
+                            padding: 4px 0;
+                            span{
+                                width: 15px;
+                                height: 15px;
+                                display: block;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+                .calender_header_details{
+                    display: flex;
+                    .calender_day-time_function{
+                        .breadcrumb{
+                            li{
+                                &::before{
+                                    content: none;
+                                }
+                                a{
+                                    font-size: 16px;
+                                    color: #666666;
+                                    text-decoration: none;
+                                    border: 1px solid #666666;
+                                    display: block;
+                                    padding: 5px 12px;
+                                }
+                                .week{
+                                    border-left: none;
+                                    border-right: none;
+                                }
+                            }
+                            li:first-child a{
+                                border-top-left-radius: 10px;
+                                border-bottom-left-radius: 8px;
+                                border-right: none;
+                            }
+                            li:last-child a{
+                                border-bottom-right-radius: 8px;
+                                border-top-right-radius: 10px;
+                                border-left: none;
+                            }
+                        }
+                    }
+                }
+                table{
+                    border-collapse: collapse;
+                    th{
+                        border: none;
+                    }
+                    td{
+                        border: 1px solid #CCCCCC;
+                        border-bottom: 1px solid #E5E5E5;
+                        padding: 0 12px;
+                        height: 25px;
+                        position: relative;
+                        .clint-att-info{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            height: 50px;
+                            width: 100%;
+                            padding: 7px 9px 0;
+                        }
+
+                    }
+                    tr:nth-child(even){
+                        td:first-child{
+                            border-left: none;
+                            border-top: none;
+                        }
+                    }
+                    tr:nth-child(odd){
+                        td:first-child{
+                            border-left: none;
+                            border-bottom: none;
+                        }
+                    }
+                
+                }
+            }
+
+            // <<<================== client details section style ==================>>>
+            .client_info_sec{
+
+                .box{
+                    background-color: #E9E9E9;
+                    box-shadow: none;
+                    table{
+                        td{
+                            color: #666666;
+                           
+                            }
+                        }
+                        td:first-child{
+                            width: 121px;
+                        }
+                    }
+                    .button {
+                        .icon_sec{
+                            gap: 10px;
+                            img{
+                                width: 24px;
+                                height: 24px;
+                             }
+                             .is-active{
+                                border-radius: 50%;
+                                width: 24px;
+                                height: 24px;
+                                img{
+                                    width: 11.26px;
+                                    height: 7.84px;
+                                }
+                             }
+                        }
+                }
+            }
+           
+            
+           
+           
+        }
+
+        // <<<================== all client section style ==================>>>
+        .all_client_list{
+            padding-left: 125px;
+            display: flex;
+            align-items: end;
+            gap: 10px;
+            .client_list_info{
+                width: 60%;
+                .table{
+                    tr:last-child{
+                        td{
+                            border-bottom: 1px solid #dbdbdb;
+                        }
+                    }
+                }
+                .client_list_info_title{
+                    .control{
+                        height: 49px;
+                        input{
+                            width: 346px;
+                            height: 100%;
+                            background-color: #E5E5E5;
+                            
+                        }
+                        .icon{
+                            height: 100%;
+                        }
+
+                    }
+
+                }
+            }
+            .client_list_info_img{
+                width: 40%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        // <<<================== pagination section style ==================>>>
+        .pagination_sec{
+            .group_button{
+                gap: 10px;
+                .button{
+                    border-radius: 12px;
+                }
+
+            }
+            .pagination-previous{
+                order: initial;
+                border-radius: 12px;
+            }
+            .pagination-next{
+                order: initial;
+                border-radius: 12px;
+            }
+            .pagination-list{
+                order: initial;
+                .pagination-link{
+                    border-radius: 12px;
+                }
+                .pagination-link.is-current {
+                    background-color: #0D7390;
+                    border-color: #0D7390;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .bottomNav {
+        width: 79%;
+    }
+}
+// <<==== additional style end ======>>

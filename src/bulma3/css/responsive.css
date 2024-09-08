@@ -1,0 +1,239 @@
+
+
+@media only screen and (max-width: 1600px) {
+    .das-px {
+        padding: 37px 70px;
+    }
+    .dashboard_wrapper .main .dashboard_body {
+        padding: 10px 70px;
+    }
+    .dashboard_wrapper .main .dashboard_body .appointment_sec table td .apointment_details {
+        padding: 12px;
+        width: 87px;
+    }
+    .date-info {
+        font-size: 10px;
+    }
+    .atten-info {
+        font-size: 12px;
+    }
+    .dashboard_wrapper .main .all_client_list {
+        padding-left: 70px;
+       
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    .dashboard_wrapper .sidebar {
+        width: 15%;
+    }
+    .dashboard_wrapper .menu {
+        width: 15%;
+    }
+    .dashboard_wrapper .main {
+        width: 85%;
+    }
+    .dashboard_wrapper .main .navbar {
+        width: 85%;
+       
+    }
+    .das-px {
+        padding: 37px 40px;
+    }
+    .dashboard_wrapper .main .dashboard_body {
+        padding: 10px 40px;
+    }
+    .dashboard_wrapper .main .dashboard_body .taskSec table tbody td {
+      
+        font-size: 14px;
+    }
+    .dashboard_wrapper .menu {
+        
+        padding: 60px 10px;
+    }
+    .dashboard_wrapper .menu .nav li a {
+        
+        padding: 10px 12px;
+    }
+    .dashboard_wrapper .main .all_client_list {
+        padding-left: 40px;
+       
+    }
+    .dashboard_wrapper .main .pagination_sec .group_button .button {
+        padding: 0 10px;
+        height: 33px;
+    }
+    .dashboard_wrapper .main .pagination_sec .pagination-list .pagination-link.is-current {
+        padding: 0 10px;
+        height: 33px;
+    }
+    .dashboard_wrapper .main .pagination_sec .pagination-list .pagination-link {
+        padding: 0 10px;
+        height: 33px;
+    }
+    .dashboard_wrapper .main .pagination_sec .pagination-next, .dashboard_wrapper .main .pagination_sec .pagination-previous {
+        padding: 0 10px;
+        height: 33px;
+    }
+    .dashboard_wrapper .main .all_client_list .client_list_info {
+        width: 75%;
+    }
+    .dashboard_wrapper .main .all_client_list .client_list_info_img {
+        width: 25%;
+    }
+
+   
+  }
+  @media only screen and (max-width: 1100px) {
+    .dashboard_wrapper {
+        display: block;
+    }
+    .dashboard_wrapper .sidebar {
+        width: 100%;
+        position: fixed;
+        left: -100%;
+        transition: .4s;
+        background-color: #808080a1;
+        height: 100%;
+        z-index: 999;
+    }
+    .dashboard_wrapper .menu {
+        width: 25%;
+        position: relative;
+    }
+    .close_btn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        color: white;
+        border: none;
+    }
+    .dashboard_wrapper .main {
+        width: 100%;
+    }
+    .dashboard_wrapper .main .navbar {
+        width: 100%;
+    }
+    .dashboard_wrapper .main .navbar .navbar-item .logo {
+        width: 150px;
+        height: 60px;
+    }
+    .dashboard_wrapper .main .header_wraper {
+        height: 100px;
+    }
+    .navbar-brand {
+        align-items: center;
+    }
+    .open-btn{
+        display: block;
+    }
+    .calender_header_title {
+        align-items: center;
+    }
+    .dashboard_wrapper .main .dashboard_body .calendar_sec .calender_header_details {
+        display: block;
+    }
+    .dashboard_wrapper .main .dashboard_body .calendar_sec .calender_sec_wrapper {
+        width: 100%;
+    }
+    .dashboard_wrapper .main .dashboard_body .calendar_sec .calendar_key {
+        padding-top: 30px;
+        width: 100%;
+    }
+    .dashboard_wrapper .main .dashboard_body .calendar_sec table {
+        width: 180%;
+    }
+    .dashboard-main-title {
+        font-size: 26px;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .dashboard_wrapper .main .dashboard_body .taskSec table tbody td:first-child {
+        width: 150px;
+    }
+    .dashboard-sub-title {
+        font-size: 22px;
+    }
+    .dashboard_wrapper .main .all_client_list {
+        flex-wrap: wrap;
+    }
+    .dashboard_wrapper .main .all_client_list .client_list_info_img {
+        width: 80%;
+        margin: 0 auto;
+        order: -1;
+    }
+    .dashboard_wrapper .main .all_client_list .client_list_info {
+        width: 100%;
+    }
+    .dashboard_wrapper .main .all_client_list {
+        padding: 0 40px;
+    }
+    .navbar-menu {
+        display: block !important;
+    }
+    .navbar-menu {
+        box-shadow: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .das-px {
+        padding: 37px 20px;
+    }
+    .dashboard-main-title {
+        font-size: 24px;
+    }
+    .dashboard_wrapper .main .dashboard_body {
+        padding: 30px 20px;
+    }
+    .dashboard_wrapper .menu {
+        width: 76%;
+    }
+    .dashboard_wrapper .main .dashboard_body .tile .subtitle {
+        font-size: 20px;
+    }
+    .tile.is-ancestor {
+      
+        display: flex;
+    }
+    .dashboard_wrapper .main .dashboard_body .tile .title {
+        font-size: 50px;
+    }
+    .dashboard-sub-title {
+        font-size: 22px;
+    }
+    .dashboard_wrapper .main .dashboard_body .taskSec table {
+        width: 220%;
+    }
+    .dashboard_wrapper .main .dashboard_body .taskSec table tbody td:last-child {
+       
+        width: 450px;
+    }
+    .dashboard_wrapper .main .dashboard_body .calendar_sec .calender_sec_wrapper .calender_header_title {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .dashboard_wrapper .main .dashboard_body .calendar_sec table {
+        width: 270%;
+    }
+    .dashboard_wrapper .main .all_client_list {
+        padding: 0 20px;
+    }
+    .client_list_info table{
+        width: 200% !important;
+    }
+    .dashboard_wrapper .main .pagination_sec .group_button {
+        gap: 10px;
+        padding: 20px 0;
+    }
+    .dashboard_wrapper .main .navbar .navbar-item .logo {
+        width: 115px;
+        height: 43px;
+    }
+    .dashboard_wrapper .main .navbar .navbar-item .logoutIcon {
+        width: 25px;
+        height: 25px;
+    }
+  }

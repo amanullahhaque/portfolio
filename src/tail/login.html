@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- tailwind css cdn -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- font-awesome icon cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <!-- css-link\ -->
+    <link rel="stylesheet" href="https://use.typekit.net/mku01mh.css">
+    <!-- apline js\ -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
+    <title>Jetzt</title>
+    <style>
+      @font-face{
+        font-family: futura-pt, sans-serif
+        src: url(https://use.typekit.net/mku01mh.css)
+      }
+
+      .baner img{height: 411px;}
+      .sid_bg{background-image: url(asset/img/Gabi.png); height: 483px}
+      @media only screen and (max-width: 810px) {
+        .baner img{height: 311px;}
+      }
+      @media only screen and (max-width: 600px) {
+        .baner img{height: 183px;}
+        .text-xs{font-size: 10px;}
+        .sid_bg{height: 100%; background-image: none;}
+      }
+    
+      .site_font{font-family: futura-pt, sans-serif}
+     .input-field input:focus ~ label {
+        font-size: 14px;
+        top: 0px;
+      }
+    </style>
+</head>
+<body class="">
+ 
+
+
+
+<div class="container mx-auto md:px-12 px-5 py-32">
+  <div class=" bg-gray-100 h-full p-6 md:p-8 w-full md:w-2/4">
+              
+             
+
+                <div class="w-full mb-4 md:mt-0 mt-3">
+                  <input name="name" id="name" type="text" placeholder="Name*" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                </div>
+                <div class="w-full  ">
+                  <input name="name" id="name" type="text" placeholder="E-Mail*" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                </div>
+                <div class="w-full  my-3">
+                  <input name="name" id="name" type="text" placeholder="Telefon" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                </div>
+                
+                
+                  <button class="bg-black hover:bg-gray-800 text-white font-semibold h-10 px-14 rounded text-sm block mt-8 flex items-center">
+              Eintragen
+            </button>
+            </div>
+</div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer
+    ></script>
+
+        
+</body>
+</html>

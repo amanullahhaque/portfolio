@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My custom Bulma website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/mystyles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+
+  <div class="dashboard_wrapper pb-6">
+    <!-- sidebar section start ========================= -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <button class="button close_btn "><i class="fa-solid fa-xmark"></i></button>
+        <div class="control  has-icons-right">
+          <input class="input is-success" type="text" placeholder="Search..." value="">
+
+          <span class="icon is-small is-right">
+            <i class="fa-solid fa-magnifying-glass has-text-black"></i>
+          </span>
+        </div>
+        <ul class='nav'>
+          <li>
+            <a href="dashboard.html">
+              <span class="icon is-small"><i class="fa fa-list"></i></span>
+              <span>Task</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="calendar.html" class="is-active">
+              <span class="icon is-small"><i class="fa-regular fa-calendar-days"></i></span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-details.html">
+              <span class="icon is-small"><i class="fa-solid fa-user-group"></i></span>
+              <span>Active Clients</span>
+            </a>
+          </li>
+          <li>
+            <a href="all-clients.html">
+              <span class="icon is-small"><i class="fa-solid fa-user-group"></i></span>
+              <span>All Clients</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i class="fa-solid fa-tags"></i></span>
+              <span>Invoices</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i class="fa-solid fa-user"></i></span>
+              <span>Your Details</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <div class="dropdown-trigger">
+              <a class="" aria-haspopup="true" aria-controls="dropdown-menu3">
+
+                <span><span class="icon is-small"><i class="fa-solid fa-user"></i></span>Click me</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-up" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item"> Overview </a>
+                <a href="#" class="dropdown-item"> Modifiers </a>
+                <a href="#" class="dropdown-item"> Grid </a>
+                <a href="#" class="dropdown-item"> Form </a>
+                <a href="#" class="dropdown-item"> Elements </a>
+                <a href="#" class="dropdown-item"> Components </a>
+                <a href="#" class="dropdown-item"> Layout </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item"> More </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="header_wraper">
+        <nav class="navbar is-fixed-top p-4 is-flex is-justify-content-space-between is-align-items-center"
+          role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <button class="button open-btn"><i class="fa-solid fa-bars"></i></button>
+            <a href="#" class="navbar-item">
+              <img class="logo" src="img/logo.png" width="112" height="28">
+            </a>
+
+          </div>
+
+          <div id="" class="navbar-menu">
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a class="navbar-item is-align-items-center is-flex" href="#">
+                  Logout <img class="logoutIcon" src="img/user.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="dashboard_body">
+        <!-- calendar section start ========================= -->
+        <header class="is-clearfix calendar_sec pb-4 pt-5 my-5  ">
+          <div class="calender_header_details">
+            <div class="calender_sec_wrapper">
+              <div class="calender_header_title">
+                <h2 class="dashboard-main-title">Calendar</h2>
+                <h2 class="dashboard-main-title s-pulled-right has-text-center">4 – 10 March 2024</h2>
+                <div class="calender_day-time_function">
+                  <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <span class="icon is-small m-0">
+                            <i class="fa-solid fa-chevron-left"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="icon is-small m-0">
+                            <i class="fa-solid fa-chevron-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="week" href="#">
+
+                          <span>Week</span>
+                        </a>
+                      </li>
+                      <li class="is-active">
+                        <a href="#">
+
+                          <span>Day</span>
+                        </a>
+                      </li>
+                      <li class="is-active">
+                        <a href="#">
+
+                          <span>List</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="overflow-hidden">
+                <table class="table is-responsive is-fullwidth custom-table mt-5">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Mon 04/03</th>
+                      <th>Tue 05/03</th>
+                      <th>Wed 06/03</th>
+                      <th>Thu 07/03</th>
+                      <th>Fri 08/03</th>
+                      <th>Sat 09/03</th>
+                      <th>Sun 10/03</th>
+                    </tr>
+
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <div class="-mb-1">7:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">8:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">9:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div class="clint-att-info confirm_bg">
+                          <h5 class="date-info">9.30-10.30</h5>
+                          <p class="atten-info">67603 E.F</p>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">10:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">11:00</div>
+                      </td>
+                      <td class="">
+                        <div class="clint-att-info available_bg">
+                          <h5 class="date-info">11.00-12.00</h5>
+                          <p class="atten-info">Available</p>
+                        </div>
+
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div class="clint-att-info confirm_bg">
+                          <h5 class="date-info">11.00-12.00</h5>
+                          <p class="atten-info">69387 S.I</p>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">12:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td class="">
+
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">13:00</div>
+                      </td>
+                      <td class="">
+                        <div class="clint-att-info confirm_bg">
+                          <h5 class="date-info">13.00-14.00</h5>
+                          <p class="atten-info">68360 E.I</p>
+                        </div>
+
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div class="clint-att-info did_not_att_bg">
+                          <h5 class="date-info">13.00-14.00</h5>
+                          <p class="atten-info">68533 K.C</p>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">14:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div class="clint-att-info confirm_bg">
+                          <h5 class="date-info">14.30–15.30</h5>
+                          <p class="atten-info">68492 Z.B</p>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">15:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">16:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <div class="clint-att-info did_not_att_bg pos-1">
+                          <h5 class="date-info">16.15-17.15</h5>
+                          <p class="atten-info">68275 M.O</p>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="clint-att-info confirm_bg">
+                          <h5 class="date-info">16.30-17.30</h5>
+                          <p class="atten-info">68482 C.C</p>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">17:00</div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="-mb-1">18:00</div>
+                      <td>
+                        <div class="clint-att-info confirm_bg pos-1">
+                          <h5 class="date-info">18.15-19.15</h5>
+                          <p class="atten-info">68462 Z.D</p>
+                        </div>
+                      </td>
+                      </td>
+                      <td>
+
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>19:00</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>20:00</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="calendar_key">
+              <h2 class="dashboard-sub-title mb-5">Calendar key</h2>
+              <ul>
+                <li><span class="available_bg"></span>Availability</li>
+                <li><span class="provisional_bg"></span>Provisional </li>
+                <li><span class="confirm_bg"></span>Confirmed</li>
+                <li><span class="attended_bg"></span>Attended</li>
+                <li><span class="did_not_att_bg"></span>Did not attend</li>
+              </ul>
+            </div>
+          </div>
+
+        </header>
+
+      </div>
+
+
+    </main>
+  </div>
+  <!-- js file add -->
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

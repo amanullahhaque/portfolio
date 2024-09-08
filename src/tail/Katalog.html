@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- tailwind css cdn -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- font-awesome icon cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <!-- css-link\ -->
+    <link rel="stylesheet" href="https://use.typekit.net/mku01mh.css">
+    <!-- apline js\ -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
+    <title>Jetzt</title>
+    <style>
+      @font-face{
+        font-family: futura-pt, sans-serif
+        src: url(https://use.typekit.net/mku01mh.css)
+      }
+
+      .baner img{height: 411px;}
+      .sid_bg{background-image: url(asset/img/Gabi.png); height: 483px}
+      @media only screen and (max-width: 810px) {
+        .baner img{height: 311px;}
+      }
+      @media only screen and (max-width: 600px) {
+        .baner img{height: 183px;}
+        .text-xs{font-size: 10px;}
+        .sid_bg{height: 100%; background-image: none;}
+      }
+    
+      .site_font{font-family: futura-pt, sans-serif}
+     .input-field input:focus ~ label {
+        font-size: 14px;
+        top: 0px;
+      }
+    </style>
+</head>
+<body class="">
+ 
+
+
+
+
+  <!-- navber section -->
+   <nav class="w-full z-10 top-0  z-20 site_font" x-data="{ isOpen: false }" @keydown.escape="isOpen = false" :class="{ '' : isOpen , '' : !isOpen}">
+      <div class="container mx-auto px-12">
+        <div class=" flex items-center justify-between flex-wrap">
+          <!--Logo etc-->
+          <div class="flex items-center flex-shrink-0  lg:pr-8 lg:mr-8 md:border-r border-gray-300">
+            <a class="text-black  no-underline hover:text-blue-500 hover:no-underline flex" href="index.html">
+              
+              <img class="h-12" src="asset/img/logo.png">
+            </a>
+          </div>
+
+          <!--Toggle button (hidden on large screens)-->
+          <button @click="isOpen = !isOpen" type="button" class="block lg:hidden px-2 text-gray-900 hover:text-black focus:outline-none focus:text-black" :class="{ 'transition transform-180': isOpen }">
+            <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" style="display: none;"></path>
+              <path x-show="!isOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+            </svg>
+          </button>
+
+          <!--Menu-->
+          <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden" :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show.transition="true">
+            <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-start flex-1 items-center site_font">
+              <li class="border-t md:border-none text-sm  text-black" x-data="{ open: false }">
+                  <a href="#" class="block md:inline-block px-4 py-4 no-underline  hover:text-blue-900" @click="open = !open">Produkte <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :class="{'rotate-180': open}" class=" transform inline-block fill-current text-md  text-black w-6 h-6"><path fill-rule="evenodd" d="M15.3 10.3a1 1 0 011.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4l3.3 3.29 3.3-3.3z"></path></svg></a>
+                  <ul class="bg-white absolute mt-2 shadow rounded w-40 py-1 text-black" x-show="open" style="display: none;">
+                    <li><a href="product.html" class="py-1 px-3 block hover:bg-indigo-100">Produkte</a></li>
+                    <li><a href="Sichtschutz.html" class="py-1 px-3 border-b block hover:bg-indigo-100">Sichtschutz</a></li>
+                    <li><a href="portfolio.html" class="py-1 px-3 border-b block hover:bg-indigo-100">Shoes</a></li>
+                    <li><a href="message.html" class="py-1 px-3 block hover:bg-indigo-100">Women's Clothing</a></li>
+                  </ul>
+              </li>
+              <li class="border-t md:border-none text-sm  text-black" x-data="{ open: false }">
+                <a href="#" class="block md:inline-block px-4 py-4 no-underline  hover:text-blue-900" @click="open = !open">Ratgeber <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :class="{'rotate-180': open}" class="transform inline-block fill-current text-md  text-black w-6 h-6"><path fill-rule="evenodd" d="M15.3 10.3a1 1 0 011.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4l3.3 3.29 3.3-3.3z"></path></svg></a>
+                <ul class="bg-white absolute mt-2 shadow rounded w-40 py-1 text-black" x-show="open" style="display: none;">
+                  <li><a href="Ratgeber.html" class="py-1 px-3 block hover:bg-indigo-100">Ratgeber</a></li>
+                  <li><a href="quick.html" class="py-1 px-3 border-b block hover:bg-indigo-100">Handbags</a></li>
+                  <li><a href="portfolio.html" class="py-1 px-3 border-b block hover:bg-indigo-100">Shoes</a></li>
+                  <li><a href="message.html" class="py-1 px-3 block hover:bg-indigo-100">Women's Clothing</a></li>
+                </ul>
+              </li>
+                
+                <li class="border-t md:border-none text-sm  text-black">
+                <a class="block md:inline-block px-4 py-4 no-underline   hover:text-blue-900 " href="Sichtschutz.html" @click="isOpen = false">JHändlersuche
+                </a>
+              </li>
+              <li class="border-t md:border-none text-sm  text-black">
+                <a class="block md:inline-block px-4 py-4 no-underline   hover:text-blue-900 " href="Katalog.html" @click="isOpen = false">Katalog
+                </a>
+              </li>
+              
+            </ul>
+            <ul class="md:pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center site_font">
+              
+                
+                <li class="border-t md:border-none text-sm  text-black">
+                <a class="block md:inline-block px-4 py-4 no-underline hover:text-blue-900 " href="#" @click="isOpen = false">Vertrieb
+                </a>
+              </li>
+               <li class="border-t md:border-none text-sm  text-black">
+                <a class="block md:inline-block px-4 py-4 no-underline hover:text-blue-900 " href="login.html" @click="isOpen = false">Kundenstimmen
+                </a>
+              </li>
+               <li class="border-t md:border-none text-sm  text-black">
+                <a class="block md:inline-block pl-4 py-3 no-underline  hover:text-blue-900 " href="Anfrage.html" @click="isOpen = false">Anfrage
+                </a>
+              </li>
+              
+            </ul>
+            
+          </div>
+          </div>  
+        
+      </div>
+  </nav>
+ 
+
+
+
+
+  <!-- section header -->
+<div class="bg-black ">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="w-full flex flex-wrap justify-between items-center py-3">
+        <div class=""><h2 class="text-2xl lg:text-3xl font-semibold text-white">Gärtnersuche</h2></div>
+        <a class="block border border border-yellow-700 runded-lg text-yellow-700 text-sm px-5 py-1" href="#">Kataloge &amp; Preislisten</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-center bg-cover bg-no-repeat h-96" style="background-image: url(asset/img/gratis-katalog.png);"></div>
+
+  <div class="w-full py-8">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="md:grid grid-cols-2 gap-8">
+        <div class="md:mb-0 mb-8">
+          <h3 class="text-xl lg:text-2xl font-bold mb-5 ">Jetzt Katalog herunterladen</h3>
+          <p class="text-lg">Entdecken Sie die grenzenlosen Möglichkeiten und lassen Sie sich inspirieren. Unser PDF Hauptkatalog, sowie unsere Spartenkataloge werden regelmäßig überarbeitet und um Neuheiten ergänzt. Sie finden darin Informationen und Preise zu unserer Materialvielfalt, sowie den jeweiligen Möglichkeiten unsere Konstruktionen individuell einzusetzen.</p>
+        </div>
+        <div class=" bg-gray-100 h-full p-6 md:p-8">
+              
+              <div class="my-6  flex flex-wrap gap-8">
+                  <div class="flex items-center">
+                    <input id="push-everything" name="push-notifications" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                    <label for="push-everything" class="ml-3 block text-sm font-medium text-gray-700">
+                      Privatperson
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <input id="push-email" name="push-notifications" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                    <label for="push-email" class="ml-3 block text-sm font-medium text-gray-700">
+                      Firma
+                    </label>
+                  </div>
+                  
+                </div>
+
+                <div class="w-full mb-4 md:mt-0 mt-3">
+                  <input name="name" id="name" type="text" placeholder="Name*" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                </div>
+                <div class="w-full  ">
+                  <input name="name" id="name" type="text" placeholder="E-Mail*" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                </div>
+                <div class="w-full  my-3">
+                  <input name="name" id="name" type="text" placeholder="Telefon" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                  <p class="text-xs my-5">Anmerkungen / Preisanfrage</p>
+                </div>
+                
+                 <div class="w-full  ">
+                  <input name="name" id="name" type="text" placeholder="" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+                </div>
+                <div class="flex items-start mt-5">
+                    <div class="flex items-center h-5">
+                      <input id="comments" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="comments" class="font-medium text-gray-800 text-xs">Trage dich zu unserem Newsletter ein!</label>
+                      
+                    </div>
+                  </div>
+                  <button class="bg-black hover:bg-gray-800 text-white font-semibold h-10 px-14 rounded text-sm block mt-8 flex items-center">
+              Eintragen
+            </button>
+            <a class="text-sm underline mt-3 block" href="#">Katalog in Papierform anfordern</a>
+            </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+  <div class="w-full py-8">
+    <div class="container mx-auto px-5 md:px-12 md:grid grid-rows-3 md:grid-rows-1 grid-cols-1 md:grid-cols-3 gap-8 lg:gap-20 ">
+
+      <div class="">
+        <h3 class="text-xl lg:text-2xl font-bold mb-5 ">Kontakt aufnehmen</h3>
+        <p class="text-xs text-gray-800">Starte jetzt in Richtung Sonne. Mit professionellen Services, passendem Zubehör und tollen Angeboten für deinen SEAT.</p>
+      </div>
+      <div class=" ">
+        <div class="w-full  md:mt-0 mt-3">
+          <input name="name" id="name" type="text" placeholder="Name*" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+        </div>
+        <div class="w-full ">
+            <input name="name" id="name" type="text" placeholder="E-Mail*" class="border-b-2 border-gray-900 bg-transparent flex-1 py-2 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+        </div>
+      </div>
+      <div class="">
+        <div class="w-full ">
+          <label class="ont-medium text-gray-800 text-xs">Ihre Nachricht</label>
+          <input name="name" id="name" type="text" placeholder="" class="border-b-2 border-gray-900 bg-transparent flex-1 py-1 placeholder-gray-900 outline-none focus:border-indigo-500 w-full">
+        </div>
+        <div class="flex items-start mt-5">
+            <div class="flex items-center h-5">
+              <input id="comments" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="comments" class="font-medium text-gray-800 text-xs">Trage dich zu unserem Newsletter ein!</label>
+              
+              
+            </div>
+          </div>
+          <button class="bg-black hover:bg-gray-800 text-white font-semibold h-10 px-14 rounded text-sm block mt-8 flex items-center">Eintragen</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
+  <div class="site_font py-8 bg-gray-100 overflow-hidden">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="w-full flex flex-wrap justify-between">
+        <div class="">
+          <div class="lg:flex md:block hidden">
+            <h3 class="text-md md:text-lg  font-bold mb-3 flex items-center"><i class="fas fa-phone text-md pr-4 "></i> Kontakt aufnehmen</h3>
+            <h3 class="text-md md:text-lg  font-bold mb-3 flex items-center ml-0 lg:ml-10"><i class="fas fa-envelope text-md pr-4"></i>info@traumgarten-ag.com</h3>
+          </div>
+          <div class="flex md:hidden block justify-between">
+            <div class="">
+              <h3 class="text-sm md:text-lg lg:text-xl font-bold mb-3 flex items-center"><i class="fas fa-phone text-md pr-4 "></i> Kontakt aufnehmen</h3>
+              <h3 class="text-sm md:text-lg lg:text-xl font-bold mb-3 flex items-center ml-0 lg:ml-10"><i class="fas fa-envelope text-md pr-4"></i>info@traumgarten-ag.com</h3>
+            </div>
+               <a class="text-xs md:text-md font-bold flex justify-end " href="#">Anfrage starten<svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 w-4 md:w-6 h-4 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+          </div>
+          
+          <div class=" ">
+            <ul class="flex my-5">
+              <li><a class="text-md mr-5" href="#">Produkte</a></li>
+              <li><a class="text-md mr-5" href="#">Ratgeber</a></li>
+              <li><a class="text-md mr-5" href="#">Händlersuche</a></li>
+              <li><a class="text-md" href="#">Katalog</a></li>
+            </ul>
+            
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <div class="">
+            <div class="md:block hidden">
+              <a class="text-sm md:text-md font-bold flex justify-end items-center " href="#">Anfrage starten<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+              
+            </div>
+            <ul class="flex  md:my-5">
+              <li><a class="text-md mr-5" href="#">Datenschutz</a></li>
+              <li><a class="text-md mr-5" href="#">Impressum</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-md md:mt-0 mt-5">Copyright © die traumgarten ag 2021</h2>
+    </div>
+  </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer
+    ></script>
+
+        
+</body>
+</html>

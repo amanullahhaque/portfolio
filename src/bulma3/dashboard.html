@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My custom Bulma website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/mystyles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+
+  <div class="dashboard_wrapper pb-6">
+    <!-- sidebar section start ========================= -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <button class="button close_btn "><i class="fa-solid fa-xmark"></i></button>
+        <div class="control  has-icons-right">
+          <input class="input is-success" type="text" placeholder="Search..." value="">
+
+          <span class="icon is-small is-right">
+            <i class="fa-solid fa-magnifying-glass has-text-black"></i>
+          </span>
+        </div>
+        <ul class='nav'>
+          <li>
+            <a href="dashboard.html" class="is-active">
+              <span class="icon is-small"><i class="fa fa-list"></i></span>
+              <span>Task</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="calendar.html">
+              <span class="icon is-small"><i class="fa-regular fa-calendar-days"></i></span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-details.html">
+              <span class="icon is-small"><i class="fa-solid fa-user-group"></i></span>
+              <span>Active Clients</span>
+            </a>
+          </li>
+          <li>
+            <a href="all-clients.html">
+              <span class="icon is-small"><i class="fa-solid fa-user-group"></i></span>
+              <span>All Clients</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i class="fa-solid fa-tags"></i></span>
+              <span>Invoices</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i class="fa-solid fa-user"></i></span>
+              <span>Your Details</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <div class="dropdown-trigger">
+              <a class="" aria-haspopup="true" aria-controls="dropdown-menu3">
+
+                <span><span class="icon is-small"><i class="fa-solid fa-user"></i></span>Click me</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-up" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item"> Overview </a>
+                <a href="#" class="dropdown-item"> Modifiers </a>
+                <a href="#" class="dropdown-item"> Grid </a>
+                <a href="#" class="dropdown-item"> Form </a>
+                <a href="#" class="dropdown-item"> Elements </a>
+                <a href="#" class="dropdown-item"> Components </a>
+                <a href="#" class="dropdown-item"> Layout </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item"> More </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="header_wraper">
+        <nav class="navbar is-fixed-top p-4 is-flex is-justify-content-space-between is-align-items-center"
+          role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <button class="button open-btn"><i class="fa-solid fa-bars"></i></button>
+            <a href="#" class="navbar-item">
+              <img class="logo" src="img/logo.png" width="112" height="28">
+            </a>
+
+          </div>
+
+          <div id="" class="navbar-menu">
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a class="navbar-item is-align-items-center is-flex" href="#">
+                  Logout <img class="logoutIcon" src="img/user.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- dashboard section start ========================= -->
+
+      <header class="is-clearfix UserNameSec border-b">
+        <div class="das-px">
+          <h2 class="dashboard-main-title">Welcome Dr Name Here</h2>
+        </div>
+
+      </header>
+      <div class="dashboard_body">
+
+        <div class="tile is-ancestor border-b">
+          <div class="tile is-parent is-3">
+            <article class="tile is-child">
+              <p class="subtitle ">Active Cases</p>
+              <p class="title is-active">3</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child">
+              <p class="subtitle">New Cases</p>
+              <p class="title">2</p>
+            </article>
+          </div>
+
+        </div>
+
+        <header class="is-clearfix taskSec border-b pb-4">
+          <div>
+            <h2 class="dashboard-sub-title">Tasks</h2>
+          </div>
+          <div class="overflow-hidden">
+            <table class="table is-responsive is-fullwidth custom-table">
+              <thead>
+                <tr>
+                  <th>Details</th>
+                  <th>Response</th>
+                  <th>Task Description</th>
+                </tr>
+
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>Case: 663996</td>
+                  <td>07/03/24</td>
+                  <td>
+                    <div class="task_des">
+                      New case - Review case and confirm/re-schedule provisional appointment on 07/03/2024 at 12:00:00
+                      <button class="button is-white p-0"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Case: 663996</td>
+                  <td>07/03/24</td>
+                  <td>
+                    <div class="task_des">
+                      New case - Review case and confirm/re-schedule provisional appointment on 07/03/2024 at
+                      12:00:00<button class="button is-white p-0"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Case: 663996</td>
+                  <td>07/03/24</td>
+                  <td>
+                    <div class="task_des">
+                      New case - Review case and confirm/re-schedule provisional appointment on 07/03/2024 at
+                      12:00:00<button class="button is-white p-0"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </header>
+
+
+        <header class="is-clearfix appointment_sec pb-4 pt-5 mt-2  ">
+          <div>
+            <h2 class="dashboard-sub-title">Today’s Appointments</h2>
+
+          </div>
+          <div class="tableScroll is-fullwidth overflow-hidden">
+            <table class="table is-responsive custom-table mt-5 ">
+              <thead>
+                <tr>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">7:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">8:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">9:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">10:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">11:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">12:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">13:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">14:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">15:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">16:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">17:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">18:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">19:00</h5>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="apoint-timing">
+                      <h5 class="start_time">20:00</h5>
+                    </div>
+                  </th>
+
+                </tr>
+
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+
+
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details available_bg">
+                      <div class="client-info ">
+                        <h5 class="date-info">11.00-12.00</h5>
+                        <p class="atten-info">Available</p>
+                      </div>
+                    </div>
+                  </td>
+
+
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details attended_bg">
+                      <div class="client-info ">
+                        <h5 class="date-info">13.00-14.00</h5>
+                        <p class="atten-info">68360 E.I</p>
+                      </div>
+                      <i class="fa-solid fa-check mx-auto check-icon"></i>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="">
+                    <div class="apointment_details confirm_bg -mr-3">
+                      <div class="client-info ">
+                        <h5 class="date-info">16.30-17.30</h5>
+                        <p class="atten-info">68482 C.C</p>
+                      </div>
+                      <i class="fa-solid fa-check mx-auto check-icon"></i>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+
+
+                  <td class="">
+                    <div class="apointment_details confirm_bg -mr-1">
+                      <div class="client-info ">
+                        <h5 class="date-info">18.15-19.15</h5>
+                        <p class="atten-info">68462 Z.D</p>
+                      </div>
+                      <i class="fa-solid fa-check mx-auto check-icon"></i>
+                    </div>
+                  </td>
+
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class=" ">
+                    <div class="apointment_details">
+                      <div class="client-info ">
+                        <h5 class="date-info"></h5>
+                        <p class="atten-info"></p>
+                      </div>
+                    </div>
+                  </td>
+
+
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+
+        </header>
+      </div>
+
+
+    </main>
+  </div>
+  <!-- js file add -->
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

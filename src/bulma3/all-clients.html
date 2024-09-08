@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My custom Bulma website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/mystyles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+
+  <div class="dashboard_wrapper">
+    <!-- sidebar section start ========================= -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <button class="button close_btn "><i class="fa-solid fa-xmark"></i></button>
+        <div class="control  has-icons-right">
+          <input class="input is-success" type="text" placeholder="Search..." value="">
+
+          <span class="icon is-small is-right">
+            <i class="fa-solid fa-magnifying-glass has-text-black"></i>
+          </span>
+        </div>
+        <ul class='nav'>
+          <li>
+            <a href="dashboard.html">
+              <span class="icon is-small"><i class="fa fa-list"></i></span>
+              <span>Task</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="calendar.html">
+              <span class="icon is-small"><i class="fa-regular fa-calendar-days"></i></span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-details.html">
+              <span class="icon is-small"><i class="fa-solid fa-user-group"></i></span>
+              <span>Active Clients</span>
+            </a>
+          </li>
+          <li>
+            <a href="all-clients.html" class="is-active">
+              <span class="icon is-small"><i class="fa-solid fa-user-group"></i></span>
+              <span>All Clients</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i class="fa-solid fa-tags"></i></span>
+              <span>Invoices</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i class="fa-solid fa-user"></i></span>
+              <span>Your Details</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <div class="dropdown-trigger">
+              <a class="" aria-haspopup="true" aria-controls="dropdown-menu3">
+
+                <span><span class="icon is-small"><i class="fa-solid fa-user"></i></span>Click me</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-up" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item"> Overview </a>
+                <a href="#" class="dropdown-item"> Modifiers </a>
+                <a href="#" class="dropdown-item"> Grid </a>
+                <a href="#" class="dropdown-item"> Form </a>
+                <a href="#" class="dropdown-item"> Elements </a>
+                <a href="#" class="dropdown-item"> Components </a>
+                <a href="#" class="dropdown-item"> Layout </a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item"> More </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="header_wraper">
+        <nav class="navbar is-fixed-top p-4 is-flex is-justify-content-space-between is-align-items-center"
+          role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <button class="button open-btn"><i class="fa-solid fa-bars"></i></button>
+            <a href="#" class="navbar-item">
+              <img class="logo" src="img/logo.png" width="112" height="28">
+            </a>
+
+          </div>
+
+          <div id="" class="navbar-menu">
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a class="navbar-item is-align-items-center is-flex" href="#">
+                  Logout <img class="logoutIcon" src="img/user.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- all client section start ========================= -->
+      <div class="all_client_list my-6">
+        <div class="client_list_info">
+          <div class="is-flex-tablet is-justify-content-space-between client_list_info_title my-5">
+            <h2 class="dashboard-main-title">All clients</h2>
+            <div class="control  has-icons-right is-flex is-align-items-center">
+              <input class="input  " type="text" placeholder="Search all clients " value="">
+
+              <span class="icon is-small is-right">
+                <i class="fa-solid fa-magnifying-glass has-text-black"></i>
+              </span>
+            </div>
+
+          </div>
+          <div class="overflow-hidden">
+            <table class="table is-responsive is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Case iD</th>
+                  <th>First name</th>
+                  <th>Surname</th>
+                  <th>Case status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td>000000</td>
+                  <td>First name</td>
+                  <td>Surname</td>
+                  <td>Active</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- pagination section start ========================= -->
+          <div class="pagination_sec is-flex-tablet is-justify-content-space-between is-align-items-center mt-6">
+            <p>Showing 1 to 10 of 28 entries</p>
+            <div class="is-flex group_button">
+              <button class="button">Copy</button>
+              <button class="button">PDF</button>
+              <button class="button">CSV</button>
+            </div>
+            <nav class="pagination" role="navigation" aria-label="pagination">
+              <a class="pagination-previous is-disabled" title="This is the first page">Prev</a>
+
+              <ul class="pagination-list">
+                <li>
+                  <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+                </li>
+                <li>
+                  <a href="#" class="pagination-link" aria-label="Goto page 2">2</a>
+                </li>
+                <li>
+                  <a href="#" class="pagination-link" aria-label="Goto page 3">3</a>
+                </li>
+              </ul>
+              <a href="#" class="pagination-next">Next</a>
+            </nav>
+          </div>
+        </div>
+        <div class="client_list_info_img">
+          <img src="img/all_client.png" alt="">
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!-- js file add -->
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
